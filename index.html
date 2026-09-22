@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مومينتوم جروث | Momentum Growth</title>
+<meta name="description" content="شركة مومينتوم جروث، شركة سعودية مقرها المدينة المنورة، متخصصة في تطوير الأعمال والتسويق بالعمولة والشراكات التجارية وربط الكفاءات بفرص التوظيف.">
+<meta property="og:title" content="مومينتوم جروث | Momentum Growth">
+<meta property="og:description" content="الزخم الصح يصنع النمو. شريكك في تطوير الأعمال والتسويق والشراكات في المملكة العربية السعودية.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://momentumgrowth.com.sa/">
+<meta property="og:image" content="https://momentumgrowth.com.sa/assets/icon.png">
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#13254A;
+    --navy-deep:#0C1834;
+    --blue:#1E3A5F;
+    --blue-light:#1E3F6B;
+    --gold:#B8893F;
+    --gold-light:#D9B36A;
+    --gold-pale:#E2C07C;
+    --gold-dark:#8A6428;
+    --ivory:#F7F4EE;
+    --charcoal:#2A2E35;
+    --slate:#8A93A3;
+    --white:#FFFFFF;
+    --line:rgba(19,37,74,.10);
+    --radius:14px;
+    --shadow:0 12px 40px rgba(19,37,74,.10);
+    --ar:'IBM Plex Sans Arabic',system-ui,sans-serif;
+    --en:'Montserrat',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--ar);
+    color:var(--charcoal);
+    background:var(--white);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .en{font-family:var(--en)}
+  .container{width:min(1140px,100% - 32px);margin-inline:auto}
+  .label{
+    font-family:var(--en);
+    font-weight:500;
+    font-size:.72rem;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  .label::before{
+    content:"";display:inline-block;width:28px;height:2px;background:var(--gold);
+    vertical-align:middle;margin-inline-end:12px;
+  }
+  h1,h2,h3{font-weight:700;line-height:1.35;color:var(--navy)}
+  h2{font-size:clamp(1.6rem,3vw,2.3rem);margin:.5rem 0 1rem}
+  .lead{font-size:1.08rem;color:#4b5563;max-width:62ch}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 28px;border-radius:999px;font-weight:600;font-size:.98rem;
+    transition:transform .2s,box-shadow .2s,background .2s;
+    border:1.5px solid transparent;cursor:pointer;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-pale),var(--gold) 60%,var(--gold-dark));color:var(--navy-deep);box-shadow:0 8px 24px rgba(184,137,63,.35)}
+  .btn-outline{border-color:rgba(255,255,255,.55);color:var(--white)}
+  .btn-outline:hover{background:rgba(255,255,255,.08)}
+  .btn-navy{background:var(--navy);color:var(--white)}
+  .btn-navy:hover{background:var(--blue)}
+  .btn svg{width:18px;height:18px}
+  section{padding:96px 0}
+  @media (max-width:720px){section{padding:64px 0}}
+
+  /* ===== Nav ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:44px;width:auto}
+  .brand .wm{display:flex;flex-direction:column;line-height:1.1;font-family:var(--en)}
+  .brand .wm b{font-weight:700;font-size:1rem;letter-spacing:.18em;color:var(--navy)}
+  .brand .wm i{font-style:normal;font-weight:500;font-size:.62rem;letter-spacing:.42em;color:var(--gold);margin-top:3px}
+  .nav-links{display:flex;gap:32px;list-style:none;font-weight:500;font-size:.95rem}
+  .nav-links a{position:relative;padding:6px 0;color:var(--navy)}
+  .nav-links a::after{content:"";position:absolute;inset-inline:0;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .25s;transform-origin:right}
+  .nav-links a:hover::after{transform:scaleX(1)}
+  .nav .btn{padding:10px 22px;font-size:.9rem}
+  .burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;transition:.3s}
+  @media (max-width:900px){
+    .nav-links,.nav .btn{display:none}
+    .burger{display:block}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:76px;inset-inline:0;background:var(--white);padding:20px 24px 28px;border-bottom:1px solid var(--line);box-shadow:var(--shadow);gap:18px}
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;overflow:hidden;
+    background:linear-gradient(180deg,var(--blue-light) 0%,var(--navy) 55%,var(--navy-deep) 100%);
+    color:var(--white);
+    padding:120px 0 140px;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:url("assets/pattern.png") center/560px repeat;
+    opacity:.35;pointer-events:none;
+  }
+  .hero-curve{
+    position:absolute;left:-2%;bottom:14%;width:56%;max-width:760px;opacity:.85;
+    pointer-events:none;
+  }
+  .hero-arc{position:absolute;top:-120px;left:-120px;width:520px;height:520px;pointer-events:none;opacity:.5}
+  .hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .hero .label{color:var(--gold-light)}
+  .hero .label::before{background:var(--gold-light)}
+  .hero h1{color:var(--white);font-size:clamp(2.1rem,4.6vw,3.6rem);margin:16px 0 20px;line-height:1.3}
+  .hero h1 em{font-style:normal;color:var(--gold-pale)}
+  .hero p{font-size:1.12rem;color:rgba(255,255,255,.82);max-width:56ch;margin-bottom:36px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-logo{display:flex;justify-content:center}
+  .hero-logo img{width:min(100%,380px);filter:drop-shadow(0 20px 40px rgba(0,0,0,.35))}
+  .hero-meta{
+    position:relative;z-index:1;margin-top:72px;
+    display:flex;gap:0;flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,.15);padding-top:28px;
+  }
+  .hero-meta div{flex:1 1 200px;padding:6px 0 6px 28px;border-inline-start:1px solid rgba(255,255,255,.15);padding-inline-start:24px}
+  .hero-meta div:first-child{border:0;padding-inline-start:0}
+  .hero-meta strong{display:block;color:var(--gold-light);font-weight:600;font-size:.95rem}
+  .hero-meta span{color:rgba(255,255,255,.7);font-size:.9rem}
+  @media (max-width:900px){
+    .hero{padding:80px 0 96px}
+    .hero .container{grid-template-columns:1fr}
+    .hero-logo{order:-1}
+    .hero-logo img{width:min(70%,260px)}
+    .hero-curve,.hero-arc{display:none}
+    .hero-meta{gap:18px}
+    .hero-meta div{border:0;padding:0;flex-basis:100%}
+    .hero .label{letter-spacing:.2em;font-size:.66rem}
+  }
+
+  /* ===== About ===== */
+  .about .container{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .about-card{
+    background:var(--ivory);border-radius:var(--radius);padding:36px;
+    position:relative;overflow:hidden;
+  }
+  .about-card::after{
+    content:"";position:absolute;inset-inline-start:-40px;bottom:-40px;width:220px;height:220px;
+    background:url("assets/icon.svg") center/contain no-repeat;opacity:.07;
+  }
+  .about-card h3{font-size:1.15rem;margin-bottom:18px}
+  .facts{list-style:none;display:grid;gap:14px}
+  .facts li{display:flex;justify-content:space-between;gap:16px;border-bottom:1px dashed rgba(19,37,74,.15);padding-bottom:10px;font-size:.95rem}
+  .facts li:last-child{border:0}
+  .facts li span:first-child{color:var(--slate)}
+  .facts li span:last-child{font-weight:600;color:var(--navy)}
+  .values{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
+  .value{border:1px solid var(--line);border-radius:12px;padding:18px 20px;transition:.25s}
+  .value:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:var(--shadow)}
+  .value strong{display:block;color:var(--navy);font-size:1.02rem;margin-bottom:4px}
+  .value strong::before{content:"◆";color:var(--gold);font-size:.6rem;vertical-align:middle;margin-inline-end:8px}
+  .value span{color:#5b6472;font-size:.92rem}
+  @media (max-width:900px){.about .container{grid-template-columns:1fr;gap:40px}}
+  @media (max-width:520px){.values{grid-template-columns:1fr}}
+
+  /* ===== Services ===== */
+  .services{background:var(--ivory);position:relative}
+  .services-head{text-align:center;max-width:720px;margin:0 auto 56px}
+  .services-head .label::before{display:none}
+  .services-head .lead{margin-inline:auto}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{
+    background:var(--white);border-radius:var(--radius);padding:32px 28px;
+    border:1px solid var(--line);position:relative;overflow:hidden;
+    transition:transform .25s,box-shadow .25s,border-color .25s;
+  }
+  .card::before{
+    content:"";position:absolute;top:0;inset-inline:0;height:3px;
+    background:linear-gradient(90deg,var(--gold-pale),var(--gold));
+    transform:scaleX(0);transform-origin:right;transition:transform .3s;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+  .card:hover::before{transform:scaleX(1)}
+  .icon{
+    width:56px;height:56px;border-radius:14px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--blue-light),var(--navy));margin-bottom:22px;
+  }
+  .icon svg{width:26px;height:26px;stroke:var(--gold-light);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:1.15rem;margin-bottom:10px}
+  .card p{color:#5b6472;font-size:.95rem}
+  .card .num{position:absolute;top:22px;inset-inline-start:24px;font-family:var(--en);font-weight:700;font-size:2.2rem;color:rgba(19,37,74,.06);line-height:1}
+  @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:600px){.grid{grid-template-columns:1fr}}
+
+  /* ===== Process ===== */
+  .process .container{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+  .steps{list-style:none;counter-reset:s;display:grid;gap:0;position:relative}
+  .steps::before{content:"";position:absolute;inset-inline-start:27px;top:28px;bottom:28px;width:2px;background:linear-gradient(180deg,var(--gold-pale),var(--gold),var(--navy));opacity:.5}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:22px;padding:18px 0;position:relative}
+  .step .n{
+    width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+    background:var(--white);border:2px solid var(--gold);color:var(--navy);
+    font-family:var(--en);font-weight:700;font-size:1.05rem;box-shadow:0 0 0 6px var(--white);position:relative;z-index:1;
+  }
+  .step h3{font-size:1.1rem;margin:12px 0 6px}
+  .step p{color:#5b6472;font-size:.95rem}
+  .process-side{position:sticky;top:110px}
+  .quote{
+    margin-top:32px;background:var(--navy);color:var(--white);border-radius:var(--radius);padding:32px;
+    position:relative;overflow:hidden;
+  }
+  .quote::before{content:"";position:absolute;inset:0;background:url("assets/pattern.png") center/420px repeat;opacity:.25}
+  .quote p{position:relative;font-size:1.25rem;font-weight:600;line-height:1.7}
+  .quote small{position:relative;display:block;margin-top:14px;color:var(--gold-light);font-family:var(--en);letter-spacing:.2em;font-size:.72rem;text-transform:uppercase}
+  @media (max-width:900px){.process .container{grid-template-columns:1fr;gap:40px}.process-side{position:static}}
+
+  /* ===== Why ===== */
+  .why{
+    background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:var(--white);
+    position:relative;overflow:hidden;
+  }
+  .why::before{content:"";position:absolute;inset:0;background:url("assets/pattern.png") center/560px repeat;opacity:.25}
+  .why .container{position:relative}
+  .why h2{color:var(--white)}
+  .why .lead{color:rgba(255,255,255,.75)}
+  .why .label{color:var(--gold-light)}
+  .why .label::before{background:var(--gold-light)}
+  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+  .pillar{border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:28px 24px;background:rgba(255,255,255,.03);transition:.25s}
+  .pillar:hover{background:rgba(255,255,255,.07);border-color:var(--gold)}
+  .pillar .k{font-family:var(--en);font-weight:700;color:var(--gold-light);font-size:1.6rem;letter-spacing:.02em}
+  .pillar h3{color:var(--white);font-size:1.05rem;margin:10px 0 8px}
+  .pillar p{color:rgba(255,255,255,.7);font-size:.92rem}
+  @media (max-width:900px){.pillars{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.pillars{grid-template-columns:1fr}}
+
+  /* ===== Contact ===== */
+  .contact .container{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .contact-list{list-style:none;display:grid;gap:22px;margin-top:32px}
+  .contact-list li{display:flex;gap:16px;align-items:flex-start}
+  .contact-list .icon{width:46px;height:46px;border-radius:12px;margin:0;flex:none;background:var(--ivory)}
+  .contact-list .icon svg{stroke:var(--gold);width:22px;height:22px}
+  .contact-list strong{display:block;color:var(--navy);font-size:.95rem}
+  .contact-list span,.contact-list a{color:#5b6472;font-size:.95rem}
+  .contact-list a:hover{color:var(--gold)}
+  form{background:var(--ivory);border-radius:var(--radius);padding:36px;display:grid;gap:18px}
+  form h3{font-size:1.2rem}
+  .field{display:grid;gap:6px}
+  .field label{font-size:.88rem;font-weight:600;color:var(--navy)}
+  .field input,.field textarea,.field select{
+    font:inherit;font-size:.95rem;padding:12px 14px;border-radius:10px;border:1px solid rgba(19,37,74,.18);
+    background:var(--white);color:var(--charcoal);outline:none;transition:border .2s,box-shadow .2s;
+  }
+  .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,137,63,.18)}
+  .field textarea{min-height:120px;resize:vertical}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  form .btn{justify-self:start}
+  form small{color:var(--slate);font-size:.8rem}
+  @media (max-width:900px){.contact .container{grid-template-columns:1fr}}
+  @media (max-width:520px){.row{grid-template-columns:1fr}form{padding:26px}}
+
+  /* ===== Footer ===== */
+  footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:56px 0 28px;font-size:.9rem}
+  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;align-items:start}
+  .foot img{height:96px;width:auto;margin-bottom:16px}
+  .foot h4{color:var(--white);font-size:.95rem;margin-bottom:14px;font-weight:600}
+  .foot ul{list-style:none;display:grid;gap:8px}
+  .foot a:hover{color:var(--gold-light)}
+  .foot-bottom{
+    margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem;color:rgba(255,255,255,.5);
+  }
+  .foot-bottom .en{letter-spacing:.18em;text-transform:uppercase;font-size:.7rem}
+  @media (max-width:800px){.foot{grid-template-columns:1fr}}
+
+  /* ===== reveal ===== */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Momentum Growth" dir="ltr">
+      <img src="assets/icon.svg" alt="">
+      <span class="wm"><b>MOMENTUM</b><i>GROWTH</i></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">من نحن</a></li>
+      <li><a href="#services">خدماتنا</a></li>
+      <li><a href="#process">منهجيتنا</a></li>
+      <li><a href="#why">لماذا نحن</a></li>
+      <li><a href="#contact">تواصل معنا</a></li>
+    </ul>
+    <a class="btn btn-navy" href="#contact">ابدأ معنا</a>
+    <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <svg class="hero-arc" viewBox="0 0 800 800" aria-hidden="true">
+    <g fill="none" stroke="#D9B36A" stroke-linecap="round">
+      <circle cx="0" cy="0" r="420" stroke-width="2"/>
+      <circle cx="0" cy="0" r="520" stroke-width="1.5" opacity=".5"/>
+      <circle cx="0" cy="0" r="620" stroke-width="1" opacity=".25"/>
+    </g>
+  </svg>
+  <svg class="hero-curve" viewBox="0 0 1200 600" aria-hidden="true">
+    <defs><linearGradient id="hg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9C6F2E" stop-opacity=".2"/><stop offset=".55" stop-color="#B8893F" stop-opacity=".7"/><stop offset="1" stop-color="#D9B36A"/></linearGradient></defs>
+    <path d="M40 560 Q 620 555 1100 90" fill="none" stroke="url(#hg)" stroke-width="10" stroke-linecap="round"/>
+    <polygon points="1160,30 1040,70 1125,150" fill="#D9B36A"/>
+  </svg>
+
+  <div class="container">
+    <div>
+      <span class="label">Momentum Growth</span>
+      <h1>الزخم الصح<br>يصنع <em>النمو</em></h1>
+      <p>مومينتوم جروث شركة سعودية مقرّها المدينة المنورة، نعمل مع المنشآت على تطوير أعمالها وتسويق خدماتها وبناء شراكات تحوّل الفرص إلى نتائج ملموسة.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#contact">تواصل معنا
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+        </a>
+        <a class="btn btn-outline" href="#services">استعرض خدماتنا</a>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <img src="assets/logo-reverse.svg" alt="شعار مومينتوم جروث">
+    </div>
+  </div>
+
+  <div class="container hero-meta">
+    <div><strong>شركة ذات مسؤولية محدودة</strong><span>سجل تجاري رقم 7054537142</span></div>
+    <div><strong>مسجّلة في ضريبة القيمة المضافة</strong><span>هيئة الزكاة والضريبة والجمارك</span></div>
+    <div><strong>المدينة المنورة</strong><span>المملكة العربية السعودية</span></div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">About</span>
+      <h2>من نحن</h2>
+      <p class="lead">تأسست مومينتوم جروث في المدينة المنورة عام 2026 لتكون شريكاً عملياً للمنشآت التي تبحث عن نمو حقيقي. نبدأ من أساس ثابت، نبني عليه حركة مستمرة، ثم نقيس النتيجة بأرقام واضحة.</p>
+      <p class="lead" style="margin-top:14px">اسمنا يختصر طريقتنا: الزخم هو الحركة التي تحرّك الأشياء، والنمو هو ما ينتج عنها. نعمل بنموذج يربط أجرنا بنتائج شركائنا، فنجاحنا مرتبط بنجاحهم.</p>
+      <div class="values">
+        <div class="value"><strong>واثقة</strong><span>نتكلم بوضوح وبدون مبالغة</span></div>
+        <div class="value"><strong>طموحة</strong><span>نظرتنا دائماً للخطوة القادمة</span></div>
+        <div class="value"><strong>احترافية</strong><span>دقيقة في الشكل والمحتوى</span></div>
+        <div class="value"><strong>عملية</strong><span>نركّز على النتائج الملموسة</span></div>
+      </div>
+    </div>
+    <div class="about-card reveal">
+      <h3>بطاقة الشركة</h3>
+      <ul class="facts">
+        <li><span>الاسم التجاري</span><span>شركة مومينتوم جروث</span></li>
+        <li><span>الاسم بالإنجليزية</span><span class="en">Momentum Growth Company</span></li>
+        <li><span>الكيان القانوني</span><span>شركة ذات مسؤولية محدودة</span></li>
+        <li><span>الرقم الوطني الموحد</span><span class="en">7054537142</span></li>
+        <li><span>تاريخ التأسيس</span><span>11 يونيو 2026</span></li>
+        <li><span>المقر الرئيسي</span><span>المدينة المنورة</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-head reveal">
+      <span class="label">Services</span>
+      <h2>خدماتنا</h2>
+      <p class="lead">حلول متكاملة لتطوير الأعمال، من فتح الأسواق وبناء الشراكات إلى التسويق وربط الكفاءات بالفرص.</p>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <span class="num en">01</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+        <h3>تطوير الأعمال وفتح الأسواق</h3>
+        <p>ندرس السوق ونحدد الفرص الأنسب لمنشأتك، ثم نبني خطة دخول واضحة بأهداف قابلة للقياس.</p>
+      </article>
+      <article class="card reveal">
+        <span class="num en">02</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 12h8"/><path d="M12 8v8"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>الشراكات التجارية</h3>
+        <p>نربطك بالشركاء والجهات المناسبة ونتولى التنسيق والمتابعة حتى تتحول الشراكة إلى تعاون فعلي.</p>
+      </article>
+      <article class="card reveal">
+        <span class="num en">03</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z"/></svg></div>
+        <h3>التسويق بالعمولة</h3>
+        <p>نسوّق خدماتك ومنتجاتك بنموذج مبني على النتيجة، فلا تدفع إلا مقابل ما يتحقق فعلاً.</p>
+      </article>
+      <article class="card reveal">
+        <span class="num en">04</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>ربط الكفاءات بفرص التوظيف</h3>
+        <p>نعمل مع الجهات التعليمية والتدريبية ومنشآت القطاع الخاص لربط الخريجين والمتدربين بوظائف فعلية ومتابعة التوظيف حتى إتمامه.</p>
+      </article>
+      <article class="card reveal">
+        <span class="num en">05</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></div>
+        <h3>تسويق البرامج التعليمية والتدريبية</h3>
+        <p>نروّج للبرامج والدورات لدى المنشآت والأفراد ونبني قنوات تسجيل ومتابعة تحقق أهداف الالتحاق.</p>
+      </article>
+      <article class="card reveal">
+        <span class="num en">06</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>إدارة الحملات والمتابعة</h3>
+        <p>نخطط الحملات التسويقية وننفذها ونرفع تقارير دورية بالأرقام، لتعرف بالضبط أين ذهب كل جهد وماذا حقق.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-side reveal">
+      <span class="label">How we work</span>
+      <h2>منهجيتنا</h2>
+      <p class="lead">أربع خطوات ثابتة نطبقها في كل مشروع، مهما اختلف حجمه أو قطاعه.</p>
+      <div class="quote">
+        <p>«أساس ثابت، ثم حركة مستمرة، ثم نمو واضح يتجاوز نقطة البداية.»</p>
+        <small>Building Momentum, Delivering Growth</small>
+      </div>
+    </div>
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="n">01</span>
+        <div><h3>الفهم</h3><p>نجلس معك لنفهم منشأتك وسوقك وما الذي يعنيه النمو بالنسبة لك تحديداً.</p></div>
+      </li>
+      <li class="step reveal">
+        <span class="n">02</span>
+        <div><h3>الخطة</h3><p>نضع خطة عمل بأهداف رقمية ومدد زمنية ومسؤوليات واضحة لكل طرف.</p></div>
+      </li>
+      <li class="step reveal">
+        <span class="n">03</span>
+        <div><h3>التنفيذ</h3><p>ننفذ بأنفسنا ونتابع يومياً، ونعدّل المسار متى ما أظهرت الأرقام حاجة لذلك.</p></div>
+      </li>
+      <li class="step reveal">
+        <span class="n">04</span>
+        <div><h3>القياس</h3><p>نرفع تقارير دورية معتمدة بالمستندات، ونحاسب أنفسنا على النتيجة لا على الجهد.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Why us</span>
+      <h2>لماذا مومينتوم جروث</h2>
+      <p class="lead">لأننا نعمل بنموذج يجعل مصلحتنا ومصلحتك في اتجاه واحد.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal"><span class="k">01</span><h3>الأجر مقابل النتيجة</h3><p>نعمل بعقود مبنية على العمولة والإنجاز الفعلي، لا على الوعود.</p></div>
+      <div class="pillar reveal"><span class="k">02</span><h3>شفافية كاملة</h3><p>كشوفات دورية معتمدة ومرفقة بالمستندات، تعرف منها كل ما تحقق.</p></div>
+      <div class="pillar reveal"><span class="k">03</span><h3>التزام بالأنظمة</h3><p>شركة مرخصة ومسجلة ضريبياً، وتلتزم بالأنظمة المرعية في المملكة في التسويق والتوظيف.</p></div>
+      <div class="pillar reveal"><span class="k">04</span><h3>قرب وسرعة استجابة</h3><p>فريق صغير ومباشر، تتعامل مع من يتخذ القرار، لا مع طبقات من الوسطاء.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Contact</span>
+      <h2>تواصل معنا</h2>
+      <p class="lead">أخبرنا عن منشأتك وما تطمح إليه، وسنعود إليك خلال يوم عمل.</p>
+      <ul class="contact-list">
+        <li>
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><strong>العنوان الوطني</strong><span>2469 شارع الملك عبدالله بن عبدالعزيز، حي وادي مذينب، المدينة المنورة 42381، الرقم الإضافي 8663</span><br><span class="en" style="font-size:.8rem;letter-spacing:.1em">Short address: DMUC2469</span></div>
+        </li>
+        <li>
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg></div>
+          <div><strong>البريد الإلكتروني</strong><a class="en" href="mailto:info@momentumgrowth.com.sa">info@momentumgrowth.com.sa</a></div>
+        </li>
+        <li>
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div><strong>الهاتف</strong><a class="en" dir="ltr" href="tel:+966500000000">+966 5X XXX XXXX</a></div>
+        </li>
+        <li>
+          <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div><strong>ساعات العمل</strong><span>الأحد إلى الخميس، 9 صباحاً إلى 5 مساءً</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <form class="reveal" id="contactForm" novalidate>
+      <h3>أرسل طلبك</h3>
+      <div class="row">
+        <div class="field"><label for="name">الاسم</label><input id="name" name="name" type="text" required placeholder="الاسم الكامل"></div>
+        <div class="field"><label for="company">المنشأة</label><input id="company" name="company" type="text" placeholder="اسم المنشأة"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="email">البريد الإلكتروني</label><input id="email" name="email" type="email" required placeholder="name@company.com" dir="ltr"></div>
+        <div class="field"><label for="phone">الجوال</label><input id="phone" name="phone" type="tel" placeholder="05X XXX XXXX" dir="ltr"></div>
+      </div>
+      <div class="field">
+        <label for="service">الخدمة المطلوبة</label>
+        <select id="service" name="service">
+          <option>تطوير الأعمال وفتح الأسواق</option>
+          <option>الشراكات التجارية</option>
+          <option>التسويق بالعمولة</option>
+          <option>ربط الكفاءات بفرص التوظيف</option>
+          <option>تسويق البرامج التعليمية والتدريبية</option>
+          <option>إدارة الحملات والمتابعة</option>
+          <option>أخرى</option>
+        </select>
+      </div>
+      <div class="field"><label for="message">رسالتك</label><textarea id="message" name="message" placeholder="أخبرنا باختصار عن منشأتك وما تحتاجه"></textarea></div>
+      <button class="btn btn-gold" type="submit">إرسال الطلب</button>
+      <small>بالضغط على إرسال سيُفتح برنامج البريد لديك برسالة جاهزة إلى فريقنا.</small>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <img src="assets/logo-reverse.svg" alt="Momentum Growth">
+        <p>شركة سعودية مقرّها المدينة المنورة، تعمل في تطوير الأعمال والتسويق والشراكات وربط الكفاءات بفرص التوظيف.</p>
+      </div>
+      <div>
+        <h4>روابط</h4>
+        <ul>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#process">منهجيتنا</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>بيانات رسمية</h4>
+        <ul>
+          <li>السجل التجاري: <span class="en">7054537142</span></li>
+          <li>شركة ذات مسؤولية محدودة (شخص واحد)</li>
+          <li>مسجلة لدى هيئة الزكاة والضريبة والجمارك</li>
+          <li class="en" dir="ltr" style="text-align:end">momentumgrowth.com.sa</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 شركة مومينتوم جروث. جميع الحقوق محفوظة.</span>
+      <span class="en">Building Momentum · Delivering Growth</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav
+  const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+  // reveal on scroll
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // contact form -> mailto
+  document.getElementById('contactForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const f=e.target;
+    if(!f.name.value.trim()||!f.email.value.trim()){alert('الرجاء إدخال الاسم والبريد الإلكتروني.');return}
+    const body=[
+      'الاسم: '+f.name.value,'المنشأة: '+f.company.value,'البريد: '+f.email.value,'الجوال: '+f.phone.value,
+      'الخدمة: '+f.service.value,'','الرسالة:',f.message.value
+    ].join('\n');
+    location.href='mailto:info@momentumgrowth.com.sa?subject='+encodeURIComponent('طلب تواصل من الموقع - '+f.name.value)+'&body='+encodeURIComponent(body);
+  });
+</script>
+</body>
+</html>
