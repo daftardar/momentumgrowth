@@ -76,6 +76,7 @@
   .btn-navy{background:var(--navy);color:var(--white)}
   .btn-navy:hover{background:var(--blue)}
   .btn svg{width:18px;height:18px}
+  section,.topics{scroll-margin-top:84px}
   section{padding:96px 0}
   @media (max-width:720px){section{padding:64px 0}}
 
@@ -247,6 +248,56 @@
   @media (max-width:900px){.pillars{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:520px){.pillars{grid-template-columns:1fr}}
 
+
+  /* ===== Topics strip ===== */
+  .topics{background:var(--white);border-bottom:1px solid var(--line);padding:18px 0}
+  .topics .container{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .topics span.t{font-size:.8rem;color:var(--slate);margin-inline-end:6px;font-weight:600}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);font-size:.86rem;font-weight:500;color:var(--navy);background:var(--ivory);transition:.2s}
+  .chip::after{content:"\2039";color:var(--gold);font-weight:700}
+  .chip:hover{border-color:var(--gold);background:var(--white)}
+
+  /* ===== Sectors ===== */
+  .sectors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+  .sector{border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;position:relative;transition:.25s;background:var(--white)}
+  .sector:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+  .sector .tag{font-family:var(--en);font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .sector h3{font-size:1.08rem;margin:8px 0 8px}
+  .sector p{color:#5b6472;font-size:.92rem}
+  @media (max-width:900px){.sectors-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.sectors-grid{grid-template-columns:1fr}}
+
+  /* ===== Models ===== */
+  .models{background:var(--ivory)}
+  .models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+  .model{background:var(--white);border-radius:var(--radius);padding:30px 28px;border:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+  .model h3{font-size:1.12rem}
+  .model .fit{font-size:.84rem;color:var(--slate)}
+  .model .fit b{color:var(--navy);font-weight:600}
+  .model ol{padding-inline-start:18px;color:#5b6472;font-size:.93rem;display:grid;gap:6px}
+  .model .pay{margin-top:auto;padding-top:14px;border-top:1px dashed rgba(19,37,74,.15);font-size:.9rem;color:var(--navy);font-weight:600}
+  .model .pay::before{content:"\25C6";color:var(--gold);font-size:.6rem;vertical-align:middle;margin-inline-end:8px}
+  @media (max-width:900px){.models-grid{grid-template-columns:1fr}}
+
+  /* ===== Insights ===== */
+  .insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+  .post{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--white);display:flex;flex-direction:column;transition:.25s}
+  .post:hover{box-shadow:var(--shadow)}
+  .post-head{background:linear-gradient(135deg,var(--blue-light),var(--navy));color:var(--white);padding:22px 24px;position:relative;overflow:hidden}
+  .post-head::after{content:"";position:absolute;inset:0;background:url("assets/pattern.png") center/360px repeat;opacity:.18}
+  .post-head .tag{position:relative;font-family:var(--en);font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-light);font-weight:600}
+  .post-head h3{position:relative;color:var(--white);font-size:1.1rem;margin-top:8px}
+  .post-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .post-body p{color:#5b6472;font-size:.94rem}
+  .post details{margin-top:auto}
+  .post summary{cursor:pointer;list-style:none;color:var(--gold-dark);font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:8px}
+  .post summary::-webkit-details-marker{display:none}
+  .post summary::after{content:"+";font-family:var(--en);font-size:1rem;color:var(--gold)}
+  .post details[open] summary::after{content:"\2212"}
+  .post details p{margin-top:12px;color:#4b5563;font-size:.93rem;line-height:1.9}
+  .post .meta{font-size:.78rem;color:var(--slate)}
+  @media (max-width:900px){.insights-grid{grid-template-columns:1fr}}
+
   /* ===== Contact ===== */
   .contact .container{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
   .contact-list{list-style:none;display:grid;gap:22px;margin-top:32px}
@@ -287,9 +338,11 @@
   @media (max-width:800px){.foot{grid-template-columns:1fr}}
 
   /* ===== reveal ===== */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  @supports (animation-timeline: view()){
+    .reveal{animation:rise .6s ease both;animation-timeline:view();animation-range:entry 0% entry 35%}
+    @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+    @media (prefers-reduced-motion:reduce){.reveal{animation:none}}
+  }
 </style>
 </head>
 <body>
@@ -303,8 +356,9 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">من نحن</a></li>
       <li><a href="#services">خدماتنا</a></li>
-      <li><a href="#process">منهجيتنا</a></li>
-      <li><a href="#why">لماذا نحن</a></li>
+      <li><a href="#sectors">القطاعات</a></li>
+      <li><a href="#models">نماذج التعاون</a></li>
+      <li><a href="#insights">رؤى</a></li>
       <li><a href="#contact">تواصل معنا</a></li>
     </ul>
     <a class="btn btn-navy" href="#contact">ابدأ معنا</a>
@@ -352,6 +406,19 @@
     <div><strong>المدينة المنورة</strong><span>المملكة العربية السعودية</span></div>
   </div>
 </section>
+
+<!-- ================= TOPICS ================= -->
+<div class="topics" aria-label="مواضيع">
+  <div class="container">
+    <span class="t">استكشف:</span>
+    <a class="chip" href="#models">الأجر مقابل النتيجة</a>
+    <a class="chip" href="#sectors">التعليم والتدريب</a>
+    <a class="chip" href="#services">ربط الكفاءات بالتوظيف</a>
+    <a class="chip" href="#services">التسويق بالعمولة</a>
+    <a class="chip" href="#services">الشراكات التجارية</a>
+    <a class="chip" href="#insights">رؤى</a>
+  </div>
+</div>
 
 <!-- ================= ABOUT ================= -->
 <section class="about" id="about">
@@ -430,6 +497,23 @@
   </div>
 </section>
 
+<!-- ================= SECTORS ================= -->
+<section class="sectors" id="sectors">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Sectors</span>
+      <h2>القطاعات التي نخدمها</h2>
+      <p class="lead">نركّز على القطاعات التي نفهم تفاصيلها، لأن النمو الحقيقي يبدأ من معرفة السوق لا من العموميات.</p>
+    </div>
+    <div class="sectors-grid">
+      <div class="sector reveal"><span class="tag">Education</span><h3>التعليم والتدريب</h3><p>معاهد وأكاديميات ومراكز تدريب تبحث عن طلاب جدد ووظائف لخريجيها.</p></div>
+      <div class="sector reveal"><span class="tag">SME</span><h3>المنشآت الصغيرة والمتوسطة</h3><p>منشآت تريد فتح أسواق جديدة أو قنوات بيع إضافية دون توظيف فريق تسويق كامل.</p></div>
+      <div class="sector reveal"><span class="tag">Private sector</span><h3>منشآت القطاع الخاص</h3><p>شركات تحتاج كفاءات سعودية مؤهلة وتريد شريكاً يتولى البحث والترشيح والمتابعة.</p></div>
+      <div class="sector reveal"><span class="tag">Services</span><h3>الخدمات والمنتجات الاستهلاكية</h3><p>علامات تجارية تريد توسيع انتشارها عبر شراكات ووكلاء بنموذج عمولة واضح.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PROCESS ================= -->
 <section class="process" id="process">
   <div class="container">
@@ -463,6 +547,49 @@
   </div>
 </section>
 
+<!-- ================= MODELS ================= -->
+<section class="models" id="models">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">How we partner</span>
+      <h2>نماذج التعاون</h2>
+      <p class="lead">ثلاثة نماذج واضحة، تختار منها ما يناسب هدفك. في كلها لا تدفع مقدماً مقابل وعود.</p>
+    </div>
+    <div class="models-grid">
+      <article class="model reveal">
+        <h3>التسويق بالعمولة</h3>
+        <p class="fit"><b>يناسب:</b> منشأة لديها خدمة أو منتج جاهز وتريد عملاء أكثر.</p>
+        <ol>
+          <li>نتفق على تعريف دقيق للعميل المستهدف وسعر العمولة.</li>
+          <li>نسوّق عبر قنواتنا وشبكة علاقاتنا.</li>
+          <li>نسلّمك كشفاً شهرياً بالعملاء الفعليين.</li>
+        </ol>
+        <div class="pay">الأجر: عمولة عن كل عميل يتم التعاقد معه فعلاً</div>
+      </article>
+      <article class="model reveal">
+        <h3>التوظيف مقابل النتيجة</h3>
+        <p class="fit"><b>يناسب:</b> جهة تعليمية أو تدريبية تريد توظيف خريجيها، أو منشأة تبحث عن كفاءات.</p>
+        <ol>
+          <li>نستلم بيانات المرشحين ونصنّفها حسب التخصص.</li>
+          <li>نتواصل مع منشآت القطاع الخاص ونرتب المقابلات.</li>
+          <li>نتابع حتى التسجيل الرسمي في التأمينات الاجتماعية.</li>
+        </ol>
+        <div class="pay">الأجر: مبلغ ثابت عن كل توظيف مُوثّق</div>
+      </article>
+      <article class="model reveal">
+        <h3>الشراكة التجارية</h3>
+        <p class="fit"><b>يناسب:</b> منشأة تريد دخول سوق أو قطاع جديد وتحتاج شريكاً محلياً.</p>
+        <ol>
+          <li>ندرس السوق ونحدد الجهات والشركاء المحتملين.</li>
+          <li>نفتح الباب ونفاوض ونرتب الاتفاقيات.</li>
+          <li>نبقى طرفاً مسؤولاً عن المتابعة بعد التوقيع.</li>
+        </ol>
+        <div class="pay">الأجر: نسبة من الإيراد الناتج عن الشراكة</div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ================= WHY ================= -->
 <section class="why" id="why">
   <div class="container">
@@ -476,6 +603,58 @@
       <div class="pillar reveal"><span class="k">02</span><h3>شفافية كاملة</h3><p>كشوفات دورية معتمدة ومرفقة بالمستندات، تعرف منها كل ما تحقق.</p></div>
       <div class="pillar reveal"><span class="k">03</span><h3>التزام بالأنظمة</h3><p>شركة مرخصة ومسجلة ضريبياً، وتلتزم بالأنظمة المرعية في المملكة في التسويق والتوظيف.</p></div>
       <div class="pillar reveal"><span class="k">04</span><h3>قرب وسرعة استجابة</h3><p>فريق صغير ومباشر، تتعامل مع من يتخذ القرار، لا مع طبقات من الوسطاء.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSIGHTS ================= -->
+<section class="insights" id="insights">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Insights</span>
+      <h2>رؤى</h2>
+      <p class="lead">قراءات قصيرة من واقع عملنا في السوق السعودي. نكتب ما نراه، بلا مبالغة.</p>
+    </div>
+    <div class="insights-grid">
+      <article class="post reveal">
+        <div class="post-head"><span class="tag">SME · Growth</span><h3>لماذا يناسب نموذج الأجر مقابل النتيجة المنشآت الصغيرة والمتوسطة؟</h3></div>
+        <div class="post-body">
+          <p>أغلب المنشآت الصغيرة لا تخسر بسبب ضعف منتجها، بل بسبب إنفاق تسويقي مقدّم لا يعود بشيء.</p>
+          <details>
+            <summary>اقرأ المقال</summary>
+            <p>المنشأة الصغيرة تعيش على التدفق النقدي. عندما تدفع عقداً تسويقياً مقدماً ثم تنتظر النتيجة، تكون قد حوّلت المخاطرة كلها إلى جانبها. نموذج الأجر مقابل النتيجة يقلب المعادلة: لا تدفع إلا عن عميل تعاقد فعلاً أو موظف سُجّل فعلاً.</p>
+            <p>الفائدة الثانية أقل وضوحاً لكنها أهم: الشريك الذي يأخذ أجره من النتيجة يختار العملاء بعناية، ويرفض الوعود التي لا يستطيع تحقيقها. وهذا بالضبط ما يحتاجه صاحب المنشأة الذي لا يملك وقتاً لمراقبة كل حملة.</p>
+            <p>الشرط الوحيد لنجاح هذا النموذج هو تعريف "النتيجة" كتابةً قبل البدء: من هو العميل المقبول، وما المستند الذي يثبت التوظيف، ومتى يُستحق الأجر. بدون هذا التعريف يتحول النموذج إلى خلاف.</p>
+            <p class="meta">فريق مومينتوم جروث · 2026</p>
+          </details>
+        </div>
+      </article>
+      <article class="post reveal">
+        <div class="post-head"><span class="tag">Education · Employment</span><h3>ما الذي تحتاجه الجهات التدريبية لتوظيف خريجيها فعلاً؟</h3></div>
+        <div class="post-body">
+          <p>الشهادة وحدها لا توظّف. ما يوظّف هو شخص يعرف المنشآت ويتابع المرشح حتى يوم التسجيل في التأمينات.</p>
+          <details>
+            <summary>اقرأ المقال</summary>
+            <p>كثير من المعاهد والأكاديميات تعد طلابها بالتوظيف، ثم تكتشف أن إدارة التوظيف عمل مختلف تماماً عن التدريب: يحتاج قاعدة بيانات منشآت، وعلاقات مع مسؤولي التوظيف، ومتابعة يومية للمقابلات، وتوثيقاً دقيقاً لكل حالة.</p>
+            <p>الحل العملي أن تبقى الجهة التدريبية متخصصة فيما تجيده، وتسند التوظيف لشريك يعمل بمقابل عن كل توظيف موثّق. بهذا يصبح للشريك مصلحة مباشرة في أن يُوظَّف الطالب فعلاً، لا أن يُرشَّح فقط.</p>
+            <p>المعيار الذي ننصح به لأي جهة تدريبية: لا تعتمد أي توظيف إلا بإثبات تسجيل في التأمينات الاجتماعية، ولا تدفع عن توظيف يقل عمره عن المدة المتفق عليها. هذان الشرطان يحميان الطرفين.</p>
+            <p class="meta">فريق مومينتوم جروث · 2026</p>
+          </details>
+        </div>
+      </article>
+      <article class="post reveal">
+        <div class="post-head"><span class="tag">Partnerships</span><h3>كيف تختار شريكاً تجارياً لا يكلّفك أكثر مما يجلب؟</h3></div>
+        <div class="post-body">
+          <p>الشراكة الجيدة تُعرف من عقدها لا من عرضها التقديمي. ثلاثة بنود تكشف كل شيء.</p>
+          <details>
+            <summary>اقرأ المقال</summary>
+            <p>البند الأول: كيف يُحسب أجر الشريك؟ إن كان مبلغاً ثابتاً مقدماً فالشريك لا يشاركك المخاطرة. وإن كان نسبة من النتيجة فمصلحتكما في اتجاه واحد.</p>
+            <p>البند الثاني: ما الذي يلتزم به الشريك كتابةً؟ عدد الاجتماعات، التقارير الدورية، والمستندات المؤيدة لكل نتيجة. الشريك الجاد لا يمانع في تحديد هذه الالتزامات، بل يطلبها.</p>
+            <p>البند الثالث: كيف تنتهي الشراكة؟ شرط إنهاء واضح بإشعار محدد يحمي الطرفين ويجعل أي خلاف مستقبلي محدود الأثر. غياب هذا الشرط هو السبب الأول في تحول الشراكات إلى نزاعات.</p>
+            <p class="meta">فريق مومينتوم جروث · 2026</p>
+          </details>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -498,7 +677,7 @@
         </li>
         <li>
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
-          <div><strong>الهاتف</strong><a class="en" dir="ltr" href="tel:+966500000000">+966 5X XXX XXXX</a></div>
+          <div><strong>الهاتف</strong><a class="en" dir="ltr" href="tel:+966595008996">+966 59 500 8996</a></div>
         </li>
         <li>
           <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
@@ -550,7 +729,9 @@
         <ul>
           <li><a href="#about">من نحن</a></li>
           <li><a href="#services">خدماتنا</a></li>
-          <li><a href="#process">منهجيتنا</a></li>
+          <li><a href="#sectors">القطاعات</a></li>
+          <li><a href="#models">نماذج التعاون</a></li>
+          <li><a href="#insights">رؤى</a></li>
           <li><a href="#contact">تواصل معنا</a></li>
         </ul>
       </div>
@@ -575,10 +756,6 @@
   const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
   burger.addEventListener('click',()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
-
-  // reveal on scroll
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
   // contact form -> mailto
   document.getElementById('contactForm').addEventListener('submit',e=>{
