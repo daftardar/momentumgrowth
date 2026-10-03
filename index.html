@@ -772,7 +772,7 @@
       </div>
       <div class="field"><label for="message">رسالتك</label><textarea id="message" name="message" placeholder="أخبرنا باختصار عن منشأتك وما تحتاجه"></textarea></div>
       <button class="btn btn-gold" type="submit">إرسال الطلب</button>
-      <small>بالضغط على إرسال سيُفتح برنامج البريد لديك برسالة جاهزة إلى فريقنا.</small>
+      <small>يصل طلبك إلى فريقنا مباشرة، ولا نشارك بياناتك مع أي جهة أخرى.</small>
     </form>
   </div>
 </section>
@@ -921,16 +921,25 @@
   burger.addEventListener('click',()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
 
-  // contact form -> mailto
-  document.getElementById('contactForm').addEventListener('submit',e=>{
+  // contact form -> Google Sheets endpoint (fallback: mailto)
+  const FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbzaQT_e2G7kEawsVXdByRPP4UUUBRKCCOqV4a0bVRbeoX4X6az_Nf0x6tjZNc6kW43V/exec';
+  const form=document.getElementById('contactForm'), note=form.querySelector('small'), btn=form.querySelector('button[type=submit]');
+  const T={need:'الرجاء إدخال الاسم والبريد الإلكتروني.',sending:'جارٍ الإرسال…',ok:'تم استلام طلبك، وسنعود إليك خلال يوم عمل.',fail:'تعذر الإرسال، سيُفتح برنامج البريد لديك بدلاً من ذلك.',send:'إرسال الطلب',subject:'طلب تواصل من الموقع - '};
+  form.addEventListener('submit',async e=>{
     e.preventDefault();
     const f=e.target;
-    if(!f.name.value.trim()||!f.email.value.trim()){alert('الرجاء إدخال الاسم والبريد الإلكتروني.');return}
-    const body=[
-      'الاسم: '+f.name.value,'المنشأة: '+f.company.value,'البريد: '+f.email.value,'الجوال: '+f.phone.value,
-      'الخدمة: '+f.service.value,'','الرسالة:',f.message.value
-    ].join('\n');
-    location.href='mailto:info@momentumgrowth.com.sa?subject='+encodeURIComponent('طلب تواصل من الموقع - '+f.name.value)+'&body='+encodeURIComponent(body);
+    if(!f.name.value.trim()||!f.email.value.trim()){alert(T.need);return}
+    const data=new URLSearchParams({name:f.name.value,company:f.company.value,email:f.email.value,phone:f.phone.value,service:f.service.value,message:f.message.value,lang:document.documentElement.lang||'ar'});
+    btn.disabled=true; btn.textContent=T.sending;
+    try{
+      await fetch(FORM_ENDPOINT,{method:'POST',mode:'no-cors',body:data});
+      note.textContent=T.ok; note.style.color='#1E7F4F'; note.style.fontWeight='600'; f.reset();
+    }catch(err){
+      note.textContent=T.fail;
+      const body=['Name: '+f.name.value,'Company: '+f.company.value,'Email: '+f.email.value,'Phone: '+f.phone.value,'Service: '+f.service.value,'',f.message.value].join('
+');
+      location.href='mailto:info@momentumgrowth.com.sa?subject='+encodeURIComponent(T.subject+f.name.value)+'&body='+encodeURIComponent(body);
+    }finally{ btn.disabled=false; btn.textContent=T.send; }
   });
 </script>
 </body>

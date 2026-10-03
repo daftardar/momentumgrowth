@@ -171,7 +171,8 @@ T = {
 '<label for="message">رسالتك</label>': '<label for="message">Message</label>',
 'placeholder="أخبرنا باختصار عن منشأتك وما تحتاجه"': 'placeholder="Briefly tell us about your organisation and what you need"',
 '<button class="btn btn-gold" type="submit">إرسال الطلب</button>': '<button class="btn btn-gold" type="submit">Send request</button>',
-'<small>بالضغط على إرسال سيُفتح برنامج البريد لديك برسالة جاهزة إلى فريقنا.</small>': '<small>Clicking send opens your email app with a ready message to our team.</small>',
+'<small>يصل طلبك إلى فريقنا مباشرة، ولا نشارك بياناتك مع أي جهة أخرى.</small>': '<small>Your request goes straight to our team. We never share your details with anyone.</small>',
+"const T={need:'الرجاء إدخال الاسم والبريد الإلكتروني.',sending:'جارٍ الإرسال…',ok:'تم استلام طلبك، وسنعود إليك خلال يوم عمل.',fail:'تعذر الإرسال، سيُفتح برنامج البريد لديك بدلاً من ذلك.',send:'إرسال الطلب',subject:'طلب تواصل من الموقع - '};": "const T={need:'Please enter your name and email.',sending:'Sending…',ok:'Thank you. We received your request and will reply within one business day.',fail:'Sending failed. Your email app will open instead.',send:'Send request',subject:'Website enquiry - '};",
 # ---- footer ----
 '<p>شركة سعودية تعمل في تطوير الأعمال والتسويق والشراكات وربط الكفاءات بفرص التوظيف.</p>': '<p>A Saudi company working in business development, marketing, partnerships and talent placement.</p>',
 '<h4>روابط</h4>': '<h4>Links</h4>',
