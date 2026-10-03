@@ -916,30 +916,34 @@
     el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px');},{passive:true});
   });
 
+  (function(){
   // mobile nav
   const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
   burger.addEventListener('click',()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  })();
 
+  (function(){
   // contact form -> Google Sheets endpoint (fallback: mailto)
   const FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbzaQT_e2G7kEawsVXdByRPP4UUUBRKCCOqV4a0bVRbeoX4X6az_Nf0x6tjZNc6kW43V/exec';
   const form=document.getElementById('contactForm'), note=form.querySelector('small'), btn=form.querySelector('button[type=submit]');
-  const T={need:'الرجاء إدخال الاسم والبريد الإلكتروني.',sending:'جارٍ الإرسال…',ok:'تم استلام طلبك، وسنعود إليك خلال يوم عمل.',fail:'تعذر الإرسال، سيُفتح برنامج البريد لديك بدلاً من ذلك.',send:'إرسال الطلب',subject:'طلب تواصل من الموقع - '};
+  const MSG={need:'الرجاء إدخال الاسم والبريد الإلكتروني.',sending:'جارٍ الإرسال…',ok:'تم استلام طلبك، وسنعود إليك خلال يوم عمل.',fail:'تعذر الإرسال، سيُفتح برنامج البريد لديك بدلاً من ذلك.',send:'إرسال الطلب',subject:'طلب تواصل من الموقع - '};
   form.addEventListener('submit',async e=>{
     e.preventDefault();
     const f=e.target;
-    if(!f.name.value.trim()||!f.email.value.trim()){alert(T.need);return}
+    if(!f.name.value.trim()||!f.email.value.trim()){alert(MSG.need);return}
     const data=new URLSearchParams({name:f.name.value,company:f.company.value,email:f.email.value,phone:f.phone.value,service:f.service.value,message:f.message.value,lang:document.documentElement.lang||'ar'});
-    btn.disabled=true; btn.textContent=T.sending;
+    btn.disabled=true; btn.textContent=MSG.sending;
     try{
       await fetch(FORM_ENDPOINT,{method:'POST',mode:'no-cors',body:data});
-      note.textContent=T.ok; note.style.color='#1E7F4F'; note.style.fontWeight='600'; f.reset();
+      note.textContent=MSG.ok; note.style.color='#1E7F4F'; note.style.fontWeight='600'; f.reset();
     }catch(err){
-      note.textContent=T.fail;
+      note.textContent=MSG.fail;
       const body=['Name: '+f.name.value,'Company: '+f.company.value,'Email: '+f.email.value,'Phone: '+f.phone.value,'Service: '+f.service.value,'',f.message.value].join('\n');
-      location.href='mailto:info@momentumgrowth.com.sa?subject='+encodeURIComponent(T.subject+f.name.value)+'&body='+encodeURIComponent(body);
-    }finally{ btn.disabled=false; btn.textContent=T.send; }
+      location.href='mailto:info@momentumgrowth.com.sa?subject='+encodeURIComponent(MSG.subject+f.name.value)+'&body='+encodeURIComponent(body);
+    }finally{ btn.disabled=false; btn.textContent=MSG.send; }
   });
+  })();
 </script>
 </body>
 </html>
