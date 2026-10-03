@@ -10,8 +10,8 @@ T = {
 # ---- head ----
 '<html lang="ar" dir="rtl">': '<html lang="en" dir="ltr">',
 '<title>مومينتوم جروث | Momentum Growth</title>': '<title>Momentum Growth | مومينتوم جروث</title>',
-'content="شركة مومينتوم جروث، شركة سعودية مقرها المدينة المنورة، متخصصة في تطوير الأعمال والتسويق بالعمولة والشراكات التجارية وربط الكفاءات بفرص التوظيف."':
- 'content="Momentum Growth is a Saudi company based in Madinah, specialising in business development, consulting, commission-based marketing, commercial partnerships and connecting talent with employment."',
+'content="شركة مومينتوم جروث، شركة سعودية متخصصة في تطوير الأعمال والتسويق بالعمولة والشراكات التجارية وربط الكفاءات بفرص التوظيف."':
+ 'content="Momentum Growth is a Saudi company specialising in business development, consulting, commission-based marketing, commercial partnerships and connecting talent with employment."',
 'content="مومينتوم جروث | Momentum Growth"': 'content="Momentum Growth"',
 'content="الزخم الصح يصنع النمو. شريكك في تطوير الأعمال والتسويق والشراكات في المملكة العربية السعودية."':
  'content="The right momentum creates growth. Your partner for business development, marketing and partnerships in Saudi Arabia."',
@@ -40,8 +40,8 @@ T = {
 '<a class="chip" href="#insights">رؤى</a>': '<a class="chip" href="#insights">Insights</a>',
 # ---- about ----
 '<h2>من نحن</h2>': '<h2>About us</h2>',
-'<p class="lead">مومينتوم جروث شركة سعودية مقرّها المدينة المنورة، تعمل شريكاً عملياً للمنشآت التي تبحث عن نمو حقيقي. نبدأ من أساس ثابت، نبني عليه حركة مستمرة، ثم نقيس النتيجة بأرقام واضحة.</p>':
- '<p class="lead">Momentum Growth is a Saudi company based in Madinah, working as a practical partner for organisations that want real growth. We start from a solid base, build steady movement on it, then measure the result in clear numbers.</p>',
+'<p class="lead">مومينتوم جروث شركة سعودية تعمل شريكاً عملياً للمنشآت التي تبحث عن نمو حقيقي. نبدأ من أساس ثابت، نبني عليه حركة مستمرة، ثم نقيس النتيجة بأرقام واضحة.</p>':
+ '<p class="lead">Momentum Growth is a Saudi company working as a practical partner for organisations that want real growth. We start from a solid base, build steady movement on it, then measure the result in clear numbers.</p>',
 '<p class="lead" style="margin-top:14px">اسمنا يختصر طريقتنا: الزخم هو الحركة التي تحرّك الأشياء، والنمو هو ما ينتج عنها. نعمل بنموذج يربط أجرنا بنتائج شركائنا، فنجاحنا مرتبط بنجاحهم.</p>':
  '<p class="lead" style="margin-top:14px">Our name is our method: momentum is the movement that gets things going, and growth is what follows. Our fees are tied to our partners\' results, so our success depends on theirs.</p>',
 '<div class="value"><strong>واثق</strong><span>نتكلم بوضوح وبدون مبالغة</span></div>': '<div class="value"><strong>Confident</strong><span>We speak clearly, without exaggeration</span></div>',
@@ -173,7 +173,7 @@ T = {
 '<button class="btn btn-gold" type="submit">إرسال الطلب</button>': '<button class="btn btn-gold" type="submit">Send request</button>',
 '<small>بالضغط على إرسال سيُفتح برنامج البريد لديك برسالة جاهزة إلى فريقنا.</small>': '<small>Clicking send opens your email app with a ready message to our team.</small>',
 # ---- footer ----
-'<p>شركة سعودية مقرّها المدينة المنورة، تعمل في تطوير الأعمال والتسويق والشراكات وربط الكفاءات بفرص التوظيف.</p>': '<p>A Saudi company based in Madinah, working in business development, marketing, partnerships and talent placement.</p>',
+'<p>شركة سعودية تعمل في تطوير الأعمال والتسويق والشراكات وربط الكفاءات بفرص التوظيف.</p>': '<p>A Saudi company working in business development, marketing, partnerships and talent placement.</p>',
 '<h4>روابط</h4>': '<h4>Links</h4>',
 '<li><a href="#about">من نحن</a></li>\n          <li><a href="#services">خدماتنا</a></li>': '<li><a href="#about">About</a></li>\n          <li><a href="#services">Services</a></li>',
 '<li><a href="#sectors">القطاعات</a></li>\n          <li><a href="#models">نماذج التعاون</a></li>\n          <li><a href="#insights">رؤى</a></li>\n          <li><a href="#contact">تواصل معنا</a></li>': '<li><a href="#sectors">Sectors</a></li>\n          <li><a href="#models">How we partner</a></li>\n          <li><a href="#insights">Insights</a></li>\n          <li><a href="#contact">Contact</a></li>',
@@ -189,6 +189,7 @@ T = {
 # ---- alt text ----
 'alt="شعار مومينتوم جروث"': 'alt="Momentum Growth logo"',
 # ---- extra ----
+'<strong>واتساب</strong>': '<strong>WhatsApp</strong>',
 '<p class="fit"><b>يناسب:</b> منشأة لديها خدمة أو منتج جاهز وتريد عملاء أكثر.</p>': '<p class="fit"><b>Best for:</b> an organisation with a ready service or product that wants more customers.</p>',
 '<h3>التسويق بالعمولة</h3>': '<h3>Commission-based marketing</h3>',
 '<a class="btn btn-gold" href="#contact">تواصل معنا': '<a class="btn btn-gold" href="#contact">Contact us',

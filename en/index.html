@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Momentum Growth | مومينتوم جروث</title>
-<meta name="description" content="Momentum Growth is a Saudi company based in Madinah, specialising in business development, consulting, commission-based marketing, commercial partnerships and connecting talent with employment.">
+<meta name="description" content="Momentum Growth is a Saudi company specialising in business development, consulting, commission-based marketing, commercial partnerships and connecting talent with employment.">
 <meta property="og:title" content="Momentum Growth">
 <meta property="og:description" content="The right momentum creates growth. Your partner for business development, marketing and partnerships in Saudi Arabia.">
 <meta property="og:type" content="website">
@@ -350,6 +350,14 @@
   .post .meta{font-size:.78rem;color:var(--slate)}
   @media (max-width:900px){.insights-grid{grid-template-columns:1fr}}
 
+  /* ===== Cursor glow ===== */
+  .pillar{position:relative;overflow:hidden;--mx:50%;--my:50%}
+  .pillar::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s ease;z-index:0;
+    background:radial-gradient(280px circle at var(--mx) var(--my),rgba(226,192,124,.26),rgba(226,192,124,0) 62%)}
+  .pillar:hover::after{opacity:1}
+  .pillar>*{position:relative;z-index:1}
+  @media (hover:none){.pillar::after{display:none}}
+
   /* ===== Contact ===== */
   .contact .container{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
   .contact-list{list-style:none;display:grid;gap:22px;margin-top:32px}
@@ -487,7 +495,6 @@
   <div class="container hero-meta">
     <div><strong>Limited liability company</strong><span>Licensed in Saudi Arabia</span></div>
     <div><strong>VAT registered</strong><span>Zakat, Tax and Customs Authority</span></div>
-    <div><strong>Madinah</strong><span>Kingdom of Saudi Arabia</span></div>
   </div>
 </section>
 
@@ -498,7 +505,7 @@
     <div class="reveal">
       <span class="label">About</span>
       <h2>About us</h2>
-      <p class="lead">Momentum Growth is a Saudi company based in Madinah, working as a practical partner for organisations that want real growth. We start from a solid base, build steady movement on it, then measure the result in clear numbers.</p>
+      <p class="lead">Momentum Growth is a Saudi company working as a practical partner for organisations that want real growth. We start from a solid base, build steady movement on it, then measure the result in clear numbers.</p>
       <p class="lead" style="margin-top:14px">Our name is our method: momentum is the movement that gets things going, and growth is what follows. Our fees are tied to our partners' results, so our success depends on theirs.</p>
       <div class="values">
         <div class="value"><strong>Confident</strong><span>We speak clearly, without exaggeration</span></div>
@@ -724,16 +731,16 @@
       <p class="lead">Tell us about your organisation and what you are aiming for. We reply within one business day.</p>
       <ul class="contact-list">
         <li>
-          <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><strong>Location</strong><span>Madinah, Kingdom of Saudi Arabia</span></div>
-        </li>
-        <li>
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg></div>
           <div><strong>Email</strong><a class="en" href="mailto:info@momentumgrowth.com.sa">info@momentumgrowth.com.sa</a></div>
         </li>
         <li>
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
           <div><strong>Phone</strong><a class="en" dir="ltr" href="tel:+966595008996">+966 59 500 8996</a></div>
+        </li>
+        <li>
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 3.2 16.8L2 22l5.3-1.2A11 11 0 1 0 20.5 3.5z"/><path d="M9 8.5c.3-.6.6-.6 1-.6h.6c.2 0 .4.1.5.4l.8 1.9c.1.2 0 .4-.1.6l-.6.7c.6 1.1 1.6 2.1 2.7 2.7l.7-.6c.2-.1.4-.2.6-.1l1.9.8c.3.1.4.3.4.5v.6c0 .4 0 .7-.6 1-.6.3-1.3.4-2 .2A9 9 0 0 1 8.8 11c-.2-.7-.1-1.4.2-2.5z"/></svg></div>
+          <div><strong>WhatsApp</strong><a class="en" dir="ltr" href="https://wa.me/966595008996" target="_blank" rel="noopener">+966 59 500 8996</a></div>
         </li>
         <li>
           <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
@@ -772,12 +779,13 @@
 
 </main>
 
+
 <footer>
   <div class="container">
     <div class="foot">
       <div>
         <img src="../assets/logo-reverse.svg" alt="Momentum Growth">
-        <p>A Saudi company based in Madinah, working in business development, marketing, partnerships and talent placement.</p>
+        <p>A Saudi company working in business development, marketing, partnerships and talent placement.</p>
       </div>
       <div>
         <h4>Links</h4>
@@ -902,6 +910,11 @@
     if(reduce){for(let i=0;i<260;i++)step();} else step();
     addEventListener('resize',()=>{resize();});
   })();
+
+  // cursor glow on cards
+  document.querySelectorAll('.pillar').forEach(el=>{
+    el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px');},{passive:true});
+  });
 
   // mobile nav
   const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
