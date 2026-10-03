@@ -41,7 +41,7 @@ function doPost(e) {
     var now = new Date();
     sheet.appendRow([
       Utilities.formatDate(now, 'Asia/Riyadh', 'yyyy-MM-dd HH:mm'),
-      p.name || '', p.company || '', p.email || '', p.phone || '',
+      p.name || '', p.company || '', p.email || '', (p.phone ? "'" + p.phone : ''),
       p.service || '', p.message || '', p.lang || 'ar'
     ]);
     var body =
