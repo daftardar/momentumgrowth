@@ -43,7 +43,7 @@ T = {
 '<p class="lead">مومينتوم جروث شركة سعودية للاستشارات وتطوير الأعمال، تعمل شريكاً عملياً للمنشآت التي تبحث عن نمو حقيقي. نبدأ من أساس ثابت، نبني عليه حركة مستمرة، ثم نقيس النتيجة بأرقام واضحة.</p>':
  '<p class="lead">Momentum Growth is a Saudi consulting and business development company, working as a practical partner for organisations that want real growth. We start from a solid base, build steady movement on it, then measure the result in clear numbers.</p>',
 '<p class="lead" style="margin-top:14px">اسمنا يختصر طريقتنا: الزخم هو الحركة التي تحرّك الأشياء، والنمو هو ما ينتج عنها. نعمل مع شركائنا بعقلية الشريك لا المورّد، فنجاحنا مرتبط بنجاحهم.</p>':
- '<p class="lead" style="margin-top:14px">Our name is our method: momentum is the movement that gets things going, and growth is what follows. Our fees are tied to our partners\' results, so our success depends on theirs.</p>',
+ '<p class="lead" style="margin-top:14px">Our name is our method: momentum is the movement that gets things going, and growth is what follows. We work with our partners as a partner, not a vendor, so our success depends on theirs.</p>',
 '<div class="value"><strong>واثق</strong><span>نتكلم بوضوح وبدون مبالغة</span></div>': '<div class="value"><strong>Confident</strong><span>We speak clearly, without exaggeration</span></div>',
 '<div class="value"><strong>طموح</strong><span>نظرتنا دائماً للخطوة القادمة</span></div>': '<div class="value"><strong>Ambitious</strong><span>Always looking at the next step</span></div>',
 '<div class="value"><strong>احترافي</strong><span>دقيقة في الشكل والمحتوى</span></div>': '<div class="value"><strong>Professional</strong><span>Precise in form and substance</span></div>',
