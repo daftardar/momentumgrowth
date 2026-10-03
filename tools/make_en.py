@@ -10,8 +10,8 @@ T = {
 # ---- head ----
 '<html lang="ar" dir="rtl">': '<html lang="en" dir="ltr">',
 '<title>مومينتوم جروث | Momentum Growth</title>': '<title>Momentum Growth | مومينتوم جروث</title>',
-'content="شركة مومينتوم جروث، شركة سعودية متخصصة في تطوير الأعمال والتسويق بالعمولة والشراكات التجارية وربط الكفاءات بفرص التوظيف."':
- 'content="Momentum Growth is a Saudi company specialising in business development, consulting, commission-based marketing, commercial partnerships and connecting talent with employment."',
+'content="شركة مومينتوم جروث، شركة سعودية للاستشارات وتطوير الأعمال، متخصصة في التسويق بالعمولة والشراكات التجارية وربط الكفاءات بفرص التوظيف."':
+ 'content="Momentum Growth is a Saudi consulting and business development company, specialising in commission-based marketing, commercial partnerships and connecting talent with employment."',
 'content="مومينتوم جروث | Momentum Growth"': 'content="Momentum Growth"',
 'content="الزخم الصح يصنع النمو. شريكك في تطوير الأعمال والتسويق والشراكات في المملكة العربية السعودية."':
  'content="The right momentum creates growth. Your partner for business development, marketing and partnerships in Saudi Arabia."',
@@ -40,8 +40,8 @@ T = {
 '<a class="chip" href="#insights">رؤى</a>': '<a class="chip" href="#insights">Insights</a>',
 # ---- about ----
 '<h2>من نحن</h2>': '<h2>About us</h2>',
-'<p class="lead">مومينتوم جروث شركة سعودية تعمل شريكاً عملياً للمنشآت التي تبحث عن نمو حقيقي. نبدأ من أساس ثابت، نبني عليه حركة مستمرة، ثم نقيس النتيجة بأرقام واضحة.</p>':
- '<p class="lead">Momentum Growth is a Saudi company working as a practical partner for organisations that want real growth. We start from a solid base, build steady movement on it, then measure the result in clear numbers.</p>',
+'<p class="lead">مومينتوم جروث شركة سعودية للاستشارات وتطوير الأعمال، تعمل شريكاً عملياً للمنشآت التي تبحث عن نمو حقيقي. نبدأ من أساس ثابت، نبني عليه حركة مستمرة، ثم نقيس النتيجة بأرقام واضحة.</p>':
+ '<p class="lead">Momentum Growth is a Saudi consulting and business development company, working as a practical partner for organisations that want real growth. We start from a solid base, build steady movement on it, then measure the result in clear numbers.</p>',
 '<p class="lead" style="margin-top:14px">اسمنا يختصر طريقتنا: الزخم هو الحركة التي تحرّك الأشياء، والنمو هو ما ينتج عنها. نعمل بنموذج يربط أجرنا بنتائج شركائنا، فنجاحنا مرتبط بنجاحهم.</p>':
  '<p class="lead" style="margin-top:14px">Our name is our method: momentum is the movement that gets things going, and growth is what follows. Our fees are tied to our partners\' results, so our success depends on theirs.</p>',
 '<div class="value"><strong>واثق</strong><span>نتكلم بوضوح وبدون مبالغة</span></div>': '<div class="value"><strong>Confident</strong><span>We speak clearly, without exaggeration</span></div>',
@@ -174,7 +174,7 @@ T = {
 '<small>يصل طلبك إلى فريقنا مباشرة، ولا نشارك بياناتك مع أي جهة أخرى.</small>': '<small>Your request goes straight to our team. We never share your details with anyone.</small>',
 "const MSG={need:'الرجاء إدخال الاسم والبريد الإلكتروني.',sending:'جارٍ الإرسال…',ok:'تم استلام طلبك، وسنعود إليك خلال يوم عمل.',fail:'تعذر الإرسال، سيُفتح برنامج البريد لديك بدلاً من ذلك.',send:'إرسال الطلب',subject:'طلب تواصل من الموقع - '};": "const MSG={need:'Please enter your name and email.',sending:'Sending…',ok:'Thank you. We received your request and will reply within one business day.',fail:'Sending failed. Your email app will open instead.',send:'Send request',subject:'Website enquiry - '};",
 # ---- footer ----
-'<p>شركة سعودية تعمل في تطوير الأعمال والتسويق والشراكات وربط الكفاءات بفرص التوظيف.</p>': '<p>A Saudi company working in business development, marketing, partnerships and talent placement.</p>',
+'<p>شركة سعودية للاستشارات وتطوير الأعمال، تعمل في التسويق والشراكات وربط الكفاءات بفرص التوظيف.</p>': '<p>A Saudi consulting and business development company, working in marketing, partnerships and talent placement.</p>',
 '<h4>روابط</h4>': '<h4>Links</h4>',
 '<li><a href="#about">من نحن</a></li>\n          <li><a href="#services">خدماتنا</a></li>': '<li><a href="#about">About</a></li>\n          <li><a href="#services">Services</a></li>',
 '<li><a href="#sectors">القطاعات</a></li>\n          <li><a href="#models">نماذج التعاون</a></li>\n          <li><a href="#insights">رؤى</a></li>\n          <li><a href="#contact">تواصل معنا</a></li>': '<li><a href="#sectors">Sectors</a></li>\n          <li><a href="#models">How we partner</a></li>\n          <li><a href="#insights">Insights</a></li>\n          <li><a href="#contact">Contact</a></li>',
