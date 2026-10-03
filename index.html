@@ -936,8 +936,7 @@
       note.textContent=T.ok; note.style.color='#1E7F4F'; note.style.fontWeight='600'; f.reset();
     }catch(err){
       note.textContent=T.fail;
-      const body=['Name: '+f.name.value,'Company: '+f.company.value,'Email: '+f.email.value,'Phone: '+f.phone.value,'Service: '+f.service.value,'',f.message.value].join('
-');
+      const body=['Name: '+f.name.value,'Company: '+f.company.value,'Email: '+f.email.value,'Phone: '+f.phone.value,'Service: '+f.service.value,'',f.message.value].join('\n');
       location.href='mailto:info@momentumgrowth.com.sa?subject='+encodeURIComponent(T.subject+f.name.value)+'&body='+encodeURIComponent(body);
     }finally{ btn.disabled=false; btn.textContent=T.send; }
   });
