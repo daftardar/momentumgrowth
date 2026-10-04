@@ -358,6 +358,77 @@
   .pillar>*{position:relative;z-index:1}
   @media (hover:none){.pillar::after{display:none}}
 
+  /* ===== Photos + 3D (preview) ===== */
+  .tilt{transform-style:preserve-3d;transition:transform .25s ease, box-shadow .25s ease;will-change:transform}
+  .sector.tilt,.media.tilt{transform-style:flat}
+  .sector{clip-path:inset(0 round var(--radius))}
+  .media{clip-path:inset(0 round 18px)}
+  .hero-3d .tilt>*{transform:translateZ(1px)}
+  .media{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 30px 60px rgba(19,37,74,.22)}
+  .media img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02)}
+  .media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,37,74,0) 55%,rgba(19,37,74,.55));pointer-events:none}
+  .media .cap{position:absolute;bottom:18px;inset-inline:20px;color:#fff;font-weight:600;font-size:.95rem;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+
+  /* hero floating 3D mark */
+  .hero-3d{position:absolute;inset-inline-end:9%;top:50%;transform:translateY(-50%);width:min(26vw,340px);z-index:2;perspective:1200px;pointer-events:none}
+  .hero-3d .mark{transform-style:preserve-3d;animation:float 7s ease-in-out infinite;filter:drop-shadow(0 40px 60px rgba(0,0,0,.45))}
+  .hero-3d img{width:100%;transform:translateZ(40px)}
+  .hero-3d .ring{position:absolute;inset:-12%;border-radius:50%;border:1px solid rgba(217,179,106,.35);transform:translateZ(-40px) rotateX(70deg)}
+  .hero-3d .ring.r2{inset:-26%;border-color:rgba(217,179,106,.18);transform:translateZ(-90px) rotateX(70deg)}
+  @keyframes float{0%,100%{transform:translateY(0) rotateX(0) rotateY(0)}50%{transform:translateY(-16px) rotateX(3deg) rotateY(-4deg)}}
+  @media (max-width:900px){.hero-3d{display:none}}
+  @media (prefers-reduced-motion:reduce){.hero-3d .mark{animation:none}}
+
+  /* about with photo */
+  .about .container{grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;max-width:none;justify-content:initial}
+  .about .container{width:min(1140px,100% - 32px)}
+  .about-media{aspect-ratio:4/3;perspective:1000px}
+  .logo-card{height:100%;display:grid;place-items:center;background:var(--ivory);border-radius:18px;padding:12%;box-shadow:0 30px 60px rgba(19,37,74,.14);position:relative;overflow:hidden;transform-style:flat}
+  .logo-card::before{content:"";position:absolute;inset:0;background:url("../assets/pattern.png") center/420px repeat;opacity:.08}
+  .logo-card img{width:100%;max-width:360px;position:relative;filter:drop-shadow(0 18px 30px rgba(19,37,74,.18))}
+  .about .values{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:900px){.about .container{grid-template-columns:1fr}.about-media{order:-1}}
+
+  /* parallax band */
+  .band{position:relative;min-height:62vh;display:grid;place-items:center;overflow:hidden;color:#fff;text-align:center;isolation:isolate;background:var(--navy)}
+  .band .bg{position:absolute;inset:-40% 0;background:url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=75") center/cover no-repeat;z-index:-2;will-change:transform}
+  .band::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,24,52,.72),rgba(19,37,74,.78));z-index:-1}
+  .band h2{color:#fff;font-size:clamp(1.8rem,4vw,3rem);margin:0 0 10px;text-wrap:balance}
+  .band p{color:rgba(255,255,255,.8);font-size:1.05rem;max-width:52ch;margin:0 auto}
+  .band .label{color:var(--gold-light)}.band .label::before{display:none}
+
+  /* services: lighter */
+  .card p{font-size:.92rem}
+  .card .num{display:none}
+
+  /* sectors as photo cards */
+  .sectors-grid{gap:18px}
+  .sector{padding:0;border:0;aspect-ratio:3/4;background:var(--navy);perspective:900px}
+  .sector .ph{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s ease}
+  .sector:hover .ph{transform:scale(1.06)}
+  .sector::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,24,52,.05) 30%,rgba(12,24,52,.85))}
+  .sector .tag,.sector h3,.sector p{position:relative;z-index:1}
+  .sector .in{position:absolute;inset:auto 0 0 0;padding:22px 20px;z-index:1}
+  .sector .tag{color:var(--gold-light)}
+  .sector h3{color:#fff;font-size:1.15rem;margin:6px 0 4px}
+  .sector p{color:rgba(255,255,255,.78);font-size:.86rem;margin:0}
+  .sector:hover{transform:none;box-shadow:0 24px 50px rgba(19,37,74,.3)}
+
+  /* models: compact */
+  .model ol{display:none}
+  .model .fit{font-size:.92rem;color:#4b5563}
+  .model .pay{margin-top:4px}
+
+  /* insights with photos */
+  .post-head{padding:0;height:170px;background:none}
+  .post-head::after{background:linear-gradient(180deg,rgba(12,24,52,.1),rgba(12,24,52,.75));opacity:1}
+  .post-head .ph{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s ease}
+  .post:hover .post-head .ph{transform:scale(1.06)}
+  .post-head .txt{position:absolute;inset:auto 0 0 0;padding:16px 20px;z-index:1}
+  .post-head h3{font-size:1rem;margin-top:4px}
+  .post-body>p:first-child{display:none}
+  .post-body{padding-top:16px}
+
   /* ===== Contact ===== */
   .contact .container{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
   .contact-list{list-style:none;display:grid;gap:22px;margin-top:32px}
@@ -505,15 +576,15 @@
     <div class="reveal">
       <span class="label">About</span>
       <h2>About us</h2>
-      <p class="lead">Momentum Growth is a Saudi consulting and business development company, working as a practical partner for organisations that want real growth. We start from a solid base, build steady movement on it, then measure the result in clear numbers.</p>
-      <p class="lead" style="margin-top:14px">Our name is our method: momentum is the movement that gets things going, and growth is what follows. We work with our partners as a partner, not a vendor, so our success depends on theirs.</p>
+      <p class="lead">A Saudi consulting and business development company. We help organisations open new markets, build partnerships and connect talent with opportunity. Our success depends on our partners’ success.</p>
       <div class="values">
-        <div class="value"><strong>Confident</strong><span>We speak clearly, without exaggeration</span></div>
-        <div class="value"><strong>Ambitious</strong><span>Always looking at the next step</span></div>
+        <div class="value"><strong>Confident</strong><span>Clarity without exaggeration</span></div>
+        <div class="value"><strong>Ambitious</strong><span>Eyes on the next step</span></div>
         <div class="value"><strong>Professional</strong><span>Precise in form and substance</span></div>
-        <div class="value"><strong>Practical</strong><span>Focused on tangible results</span></div>
+        <div class="value"><strong>Practical</strong><span>Tangible results</span></div>
       </div>
     </div>
+    <div class="about-media reveal"><div class="logo-card tilt" data-tilt="7"><img src="../assets/logo-full.svg" alt="Momentum Growth logo"></div></div>
   </div>
 </section>
 
@@ -523,40 +594,50 @@
     <div class="services-head reveal">
       <span class="label">Services</span>
       <h2>Our services</h2>
-      <p class="lead">Five clear services, from consulting and market entry to partnerships, marketing and connecting talent with opportunity.</p>
+      <p class="lead">Five services, one goal: measurable growth.</p>
     </div>
     <div class="grid">
       <article class="card reveal">
         <span class="num en">01</span>
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12z"/><path d="M9 11h6"/><path d="M9 14h4"/></svg></div>
         <h3>Consulting</h3>
-        <p>Practical advice on business development, marketing and partnerships, built on knowledge of the Saudi market rather than templates, and ending in an execution plan rather than a report.</p>
+        <p>Practical advice that ends in an execution plan, not a report.</p>
       </article>
       <article class="card reveal">
         <span class="num en">02</span>
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
         <h3>Business development &amp; market entry</h3>
-        <p>We study the market, identify the right opportunities for your organisation and build a clear entry plan with measurable targets.</p>
+        <p>We pinpoint the right opportunity and build an entry plan with measurable targets.</p>
       </article>
       <article class="card reveal">
         <span class="num en">03</span>
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 12h8"/><path d="M12 8v8"/><circle cx="12" cy="12" r="9"/></svg></div>
         <h3>Commercial partnerships</h3>
-        <p>We connect you with the right partners and institutions and handle coordination and follow-up until the partnership becomes real cooperation.</p>
+        <p>We open the door with the right partner and follow through until cooperation is real.</p>
       </article>
       <article class="card reveal">
         <span class="num en">04</span>
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z"/></svg></div>
         <h3>Commission-based marketing</h3>
-        <p>We market your services and products on a results-based model, run the campaigns and report periodically in numbers, so you only pay for what is actually achieved.</p>
+        <p>Results-based marketing, reported in numbers.</p>
       </article>
       <article class="card reveal">
         <span class="num en">05</span>
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Talent placement</h3>
-        <p>We work with education and training providers and private-sector employers to place graduates and trainees in real jobs, following each hire through to completion.</p>
+        <p>We place graduates and trainees in real jobs and follow through to the hire.</p>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ================= BAND ================= -->
+<section class="band" aria-label="Tagline">
+  <div class="bg" data-parallax="0.18"></div>
+  <div class="container reveal">
+    <span class="label">Momentum Growth</span>
+    <h2>Your growth partner in the Kingdom</h2>
+    <p>From idea to result, we work with you step by step.</p>
   </div>
 </section>
 
@@ -566,13 +647,13 @@
     <div class="reveal">
       <span class="label">Sectors</span>
       <h2>Sectors we serve</h2>
-      <p class="lead">We work with large enterprises and SMEs alike, and focus on the sectors whose details we understand.</p>
+      <p class="lead">We work with large and small organisations, in sectors we know in detail.</p>
     </div>
     <div class="sectors-grid">
-      <div class="sector reveal"><span class="tag">Enterprise</span><h3>Large enterprises</h3><p>Companies and groups that want a local partner to open a new sector or run a partnerships and recruitment channel with full accountability.</p></div>
-      <div class="sector reveal"><span class="tag">SME</span><h3>Small &amp; medium enterprises</h3><p>Businesses that want new markets or additional sales channels without hiring a full marketing team.</p></div>
-      <div class="sector reveal"><span class="tag">Education</span><h3>Education &amp; training</h3><p>Institutes, academies and training centres looking for new students and jobs for their graduates.</p></div>
-      <div class="sector reveal"><span class="tag">Consumer</span><h3>Consumer services &amp; products</h3><p>Brands that want wider reach through partners and agents on a clear commission model.</p></div>
+      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=75')"></div><div class="in"><span class="tag">Enterprise</span><h3>Large enterprises</h3><p>A local partner for a new sector or partnerships channel.</p></div></div>
+      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=75')"></div><div class="in"><span class="tag">SME</span><h3>Small &amp; medium enterprises</h3><p>New markets and sales channels without a full team.</p></div></div>
+      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=75')"></div><div class="in"><span class="tag">Education</span><h3>Education &amp; training</h3><p>New students and jobs for graduates.</p></div></div>
+      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=75')"></div><div class="in"><span class="tag">Consumer</span><h3>Services &amp; products</h3><p>Wider reach through partners and agents.</p></div></div>
     </div>
   </div>
 </section>
@@ -616,7 +697,7 @@
     <div class="reveal">
       <span class="label">How we partner</span>
       <h2>How we partner</h2>
-      <p class="lead">Three clear models. Pick the one that fits your goal. In none of them do you pay upfront for promises.</p>
+      <p class="lead">Three models. Pick the one that fits your goal.</p>
     </div>
     <div class="models-grid">
       <article class="model reveal">
@@ -676,11 +757,11 @@
     <div class="reveal">
       <span class="label">Insights</span>
       <h2>Insights</h2>
-      <p class="lead">Short reads from our work in the Saudi market. We write what we see, without exaggeration.</p>
+      <p class="lead">Short reads from the market.</p>
     </div>
     <div class="insights-grid">
       <article class="post reveal">
-        <div class="post-head"><span class="tag">SME · Growth</span><h3>Why pay-for-results suits small and medium enterprises</h3></div>
+        <div class="post-head"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=75')"></div><div class="txt"><span class="tag">SME · Growth</span><h3>Why pay-for-results suits small and medium enterprises</h3></div></div>
         <div class="post-body">
           <p>Most small businesses do not fail because of a weak product, but because of upfront marketing spend that returns nothing.</p>
           <details>
@@ -693,7 +774,7 @@
         </div>
       </article>
       <article class="post reveal">
-        <div class="post-head"><span class="tag">Education · Employment</span><h3>What training providers really need to get their graduates hired</h3></div>
+        <div class="post-head"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=75')"></div><div class="txt"><span class="tag">Education · Employment</span><h3>What training providers really need to get their graduates hired</h3></div></div>
         <div class="post-body">
           <p>A certificate alone does not get anyone hired. What does is a person who knows the employers and follows the candidate through to the day of social-insurance registration.</p>
           <details>
@@ -706,7 +787,7 @@
         </div>
       </article>
       <article class="post reveal">
-        <div class="post-head"><span class="tag">Partnerships</span><h3>How to choose a commercial partner that brings more than it costs</h3></div>
+        <div class="post-head"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=75')"></div><div class="txt"><span class="tag">Partnerships</span><h3>How to choose a commercial partner that brings more than it costs</h3></div></div>
         <div class="post-body">
           <p>A good partnership shows in its contract, not its pitch deck. Three clauses reveal everything.</p>
           <details>
@@ -728,7 +809,7 @@
     <div class="reveal">
       <span class="label">Contact</span>
       <h2>Contact us</h2>
-      <p class="lead">Tell us about your organisation and what you are aiming for. We reply within one business day.</p>
+      <p class="lead">Tell us about your organisation. We reply within one business day.</p>
       <ul class="contact-list">
         <li>
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg></div>
@@ -909,6 +990,21 @@
     init();
     if(reduce){for(let i=0;i<260;i++)step();} else step();
     addEventListener('resize',()=>{resize();});
+  })();
+
+  // 3D tilt + parallax (preview)
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches || matchMedia('(hover:none)').matches) return;
+    document.querySelectorAll('.tilt').forEach(el=>{
+      const max=+el.dataset.tilt||8; const host=el.closest('.hero-3d')?document.querySelector('.hero'):el;
+      host.addEventListener('pointermove',e=>{const r=host.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+        el.style.transform='perspective(1000px) rotateX('+(-y*max)+'deg) rotateY('+(x*max)+'deg)'+(el.classList.contains('mark')?'':' translateY(-4px)');},{passive:true});
+      host.addEventListener('pointerleave',()=>{el.style.transform='';});
+    });
+    const px=[...document.querySelectorAll('[data-parallax]')];
+    function par(){px.forEach(el=>{const r=el.parentElement.getBoundingClientRect();const k=+el.dataset.parallax;el.style.transform='translateY('+((r.top+r.height/2-innerHeight/2)*k)+'px)';});}
+    addEventListener('scroll',par,{passive:true}); addEventListener('resize',par); par();
+    if(window.__lenis){window.__lenis.on('scroll',par);}
   })();
 
   // cursor glow on cards
