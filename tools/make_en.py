@@ -21,7 +21,7 @@ T = {
 '<li><a href="#services">خدماتنا</a></li>': '<li><a href="#services">Services</a></li>',
 '<li><a href="#sectors">القطاعات</a></li>': '<li><a href="#sectors">Sectors</a></li>',
 '<li><a href="#models">نماذج التعاون</a></li>': '<li><a href="#models">How we partner</a></li>',
-'<li><a href="#insights">رؤى</a></li>': '<li><a href="#insights">Insights</a></li>',
+'<li><a href="#insights">مقالات</a></li>': '<li><a href="#insights">Insights</a></li>',
 '<li><a href="#contact">تواصل معنا</a></li>': '<li><a href="#contact">Contact</a></li>',
 '<li><a href="#process">منهجيتنا</a></li>': '<li><a href="#process">Approach</a></li>',
 '<a class="nav-contact" href="#contact">تواصل معنا</a>': '<a class="nav-contact" href="#contact">Contact us</a>',
@@ -119,7 +119,7 @@ T = {
 '<h3>التزام بالأنظمة</h3><p>شركة مرخصة ومسجلة ضريبياً، وتلتزم بالأنظمة المرعية في المملكة في التسويق والتوظيف.</p>': '<h3>Regulatory compliance</h3><p>A licensed, tax-registered company that follows the Kingdom\'s marketing and employment regulations.</p>',
 '<h3>قرب وسرعة استجابة</h3><p>فريق صغير ومباشر، تتعامل مع من يتخذ القرار، لا مع طبقات من الوسطاء.</p>': '<h3>Close and responsive</h3><p>A small, direct team. You deal with the decision-maker, not layers of intermediaries.</p>',
 # ---- insights ----
-'<h2>رؤى</h2>': '<h2>Insights</h2>',
+'<h2>مقالات</h2>': '<h2>Insights</h2>',
 '<p class="lead">قراءات قصيرة من واقع عملنا في السوق السعودي. نكتب ما نراه، بلا مبالغة.</p>': '<p class="lead">Short reads from our work in the Saudi market. We write what we see, without exaggeration.</p>',
 '<h3>لماذا يناسب نموذج الدفع مقابل النتائج المنشآت الصغيرة والمتوسطة؟</h3>': '<h3>Why pay-for-results suits small and medium enterprises</h3>',
 '<p>أغلب المنشآت الصغيرة لا تخسر بسبب ضعف منتجها، بل بسبب إنفاق تسويقي مقدّم لا يعود بشيء.</p>': '<p>Most small businesses do not fail because of a weak product, but because of upfront marketing spend that returns nothing.</p>',
