@@ -233,7 +233,7 @@ for k, v in T.items():
         missing.append(k[:60])
 
 # asset paths one level up
-s = s.replace('"assets/', '"../assets/').replace("url(\"assets/", "url(\"../assets/")
+s = s.replace('"assets/', '"../assets/').replace("url(\"assets/", "url(\"../assets/").replace("url('assets/", "url('../assets/")
 
 io.open(os.path.join(out_dir, 'index.html'), 'w', encoding='utf-8').write(s)
 
