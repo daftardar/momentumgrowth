@@ -237,6 +237,15 @@ T = {
 '<div><strong>شركة ذات مسؤولية محدودة</strong><span>مرخصة في المملكة العربية السعودية</span></div>': '<div><strong>Limited liability company</strong><span>Licensed in Saudi Arabia</span></div>',
 '<div><strong>مسجّلة في ضريبة القيمة المضافة</strong><span>هيئة الزكاة والضريبة والجمارك</span></div>': '<div><strong>VAT registered</strong><span>Zakat, Tax and Customs Authority</span></div>',
 '<div><strong>المدينة المنورة</strong><span>المملكة العربية السعودية</span></div>': '<div><strong>Madinah</strong><span>Kingdom of Saudi Arabia</span></div>',
+# ---- cleanup: no placement / licensing claims ----
+'content="شركة مومينتوم جروث، شركة سعودية للاستشارات وتطوير الأعمال، متخصصة في التحول الرقمي والذكاء الاصطناعي والشراكات التجارية وشراكات التدريب."': 'content="Momentum Growth is a Saudi consulting and business development company, specialising in digital transformation and AI, commercial partnerships and training partnerships."',
+'<div><strong>شركة ذات مسؤولية محدودة</strong><span>مسجّلة في المملكة العربية السعودية</span></div>': '<div><strong>Limited liability company</strong><span>Registered in Saudi Arabia</span></div>',
+'<h3>شراكات التدريب</h3>\n        <p>نعرّف منشآت القطاع الخاص بجهات تدريب مرخصة، وننسّق اللقاء التعريفي، ويتم التعاقد مباشرة بين الطرفين.</p>': '<h3>Training partnerships</h3>\n        <p>We introduce private-sector employers to licensed training providers and coordinate the introductory meeting. Contracts are signed directly between the two parties.</p>',
+'<h3>التعليم والتدريب</h3><p>شراكات مع منشآت القطاع الخاص لبرامج تدريبية تناسب احتياجها.</p>': '<h3>Education &amp; training</h3><p>Partnerships with private-sector employers for training programmes that fit their needs.</p>',
+'<h3>التزام بالأنظمة</h3><p>شركة مسجّلة نظامياً وضريبياً، وتلتزم بالأنظمة المرعية في المملكة.</p>': "<h3>Regulatory compliance</h3><p>A properly registered, tax-registered company that follows the Kingdom's regulations.</p>",
+'<option>شراكات التدريب</option>': '<option>Training partnerships</option>',
+'<p class="lead">شركة سعودية للاستشارات وتطوير الأعمال. نساعد المنشآت على فتح أسواق جديدة، وبناء شراكات تجارية وتدريبية. نجاحنا مرتبط بنجاح شركائنا.</p>': '<p class="lead">A Saudi consulting and business development company. We help organisations open new markets and build commercial and training partnerships. Our success depends on our partners’ success.</p>',
+'<p>شركة سعودية للاستشارات وتطوير الأعمال، تعمل في التسويق والشراكات التجارية وشراكات التدريب.</p>': '<p>A Saudi consulting and business development company, working in marketing, commercial partnerships and training partnerships.</p>',
 }
 
 
