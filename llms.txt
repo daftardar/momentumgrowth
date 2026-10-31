@@ -41,6 +41,12 @@ Understand, Plan, Execute, Measure — الفهم، الخطة، التنفيذ�
 - [ما الذي تحتاجه الجهات التدريبية لتوظيف خريجيها فعلاً؟](https://momentumgrowth.com.sa/articles/training-providers-employment.html)
 - [كيف تختار شريكاً تجارياً لا يكلّفك أكثر مما يجلب؟](https://momentumgrowth.com.sa/articles/choosing-a-commercial-partner.html)
 
+## Articles (English)
+
+- [How a small business can use AI without a tech team](https://momentumgrowth.com.sa/en/articles/ai-for-small-business.html)
+- [What training providers really need to get their graduates hired](https://momentumgrowth.com.sa/en/articles/training-providers-employment.html)
+- [How to choose a commercial partner that brings more than it costs](https://momentumgrowth.com.sa/en/articles/choosing-a-commercial-partner.html)
+
 ## Optional
 
 - [Sitemap](https://momentumgrowth.com.sa/sitemap.xml)
