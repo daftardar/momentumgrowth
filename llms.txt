@@ -35,6 +35,12 @@ Understand, Plan, Execute, Measure — الفهم، الخطة، التنفيذ�
 - LinkedIn: https://www.linkedin.com/company/momentum-growth-sa/
 - Website: https://momentumgrowth.com.sa
 
+## Articles | مقالات
+
+- [كيف تستفيد المنشأة الصغيرة من الذكاء الاصطناعي دون فريق تقني؟](https://momentumgrowth.com.sa/articles/ai-for-small-business.html)
+- [ما الذي تحتاجه الجهات التدريبية لتوظيف خريجيها فعلاً؟](https://momentumgrowth.com.sa/articles/training-providers-employment.html)
+- [كيف تختار شريكاً تجارياً لا يكلّفك أكثر مما يجلب؟](https://momentumgrowth.com.sa/articles/choosing-a-commercial-partner.html)
+
 ## Optional
 
 - [Sitemap](https://momentumgrowth.com.sa/sitemap.xml)
