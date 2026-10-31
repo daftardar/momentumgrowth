@@ -350,6 +350,17 @@
   .post .meta{font-size:.78rem;color:var(--slate)}
   @media (max-width:900px){.insights-grid{grid-template-columns:1fr}}
 
+  /* ===== FAQ ===== */
+  .faq{background:var(--ivory)}
+  .faq-list{margin-top:40px;display:grid;gap:12px;max-width:820px}
+  .faq-item{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:0 22px;transition:.2s}
+  .faq-item[open]{box-shadow:var(--shadow);border-color:transparent}
+  .faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-weight:600;color:var(--navy);font-size:1rem}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"+";font-family:var(--en);font-size:1.2rem;color:var(--gold);flex:none}
+  .faq-item[open] summary::after{content:"\2212"}
+  .faq-item p{padding:0 0 18px;color:#4b5563;font-size:.95rem;line-height:1.9}
+
   /* ===== Cursor glow ===== */
   .pillar{position:relative;overflow:hidden;--mx:50%;--my:50%}
   .pillar::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s ease;z-index:0;
@@ -516,6 +527,202 @@
   html[lang=en] .lead,html[lang=en] p{line-height:1.7}
   html[lang=en] .lang{font-family:var(--ar);letter-spacing:0;font-size:.86rem;padding:4px 12px}
 </style>
+<link rel="canonical" href="https://momentumgrowth.com.sa/en/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://momentumgrowth.com.sa/#organization",
+      "name": "Momentum Growth",
+      "alternateName": "مومينتوم جروث",
+      "url": "https://momentumgrowth.com.sa/",
+      "logo": "https://momentumgrowth.com.sa/assets/icon.png",
+      "image": "https://momentumgrowth.com.sa/assets/icon.png",
+      "description": "A Saudi consulting and business development company specialising in digital transformation and AI, commercial partnerships and training partnerships.",
+      "slogan": "Building Momentum · Delivering Growth",
+      "email": "info@momentumgrowth.com.sa",
+      "telephone": "+966595008996",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Saudi Arabia"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SA"
+      },
+      "knowsLanguage": [
+        "ar",
+        "en"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/momentum-growth-sa/"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "info@momentumgrowth.com.sa",
+          "telephone": "+966595008996",
+          "areaServed": "SA",
+          "availableLanguage": [
+            "ar",
+            "en"
+          ]
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Consulting"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Business development and market entry"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial partnerships"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Digital transformation and AI"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Training partnerships"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://momentumgrowth.com.sa/#website",
+      "url": "https://momentumgrowth.com.sa/",
+      "name": "Momentum Growth",
+      "inLanguage": [
+        "ar",
+        "en"
+      ],
+      "publisher": {
+        "@id": "https://momentumgrowth.com.sa/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://momentumgrowth.com.sa/en/#webpage",
+      "url": "https://momentumgrowth.com.sa/en/",
+      "name": "Momentum Growth | مومينتوم جروث",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://momentumgrowth.com.sa/#website"
+      },
+      "about": {
+        "@id": "https://momentumgrowth.com.sa/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://momentumgrowth.com.sa/en/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Momentum Growth?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Saudi consulting and business development company. We help organisations open new markets and build commercial and training partnerships. It is a limited liability company registered in the Kingdom of Saudi Arabia and VAT-registered with the Zakat, Tax and Customs Authority."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What services does Momentum Growth offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Five services: consulting, business development and market entry, commercial partnerships, digital transformation and AI, and training partnerships."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can a small business use AI without a technical team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with one task that eats the team’s time and repeats every day, such as answering customer enquiries, preparing proposals or following up candidates. Pick one tool for it and measure the result after a month. Do not enter sensitive data into any tool before you understand where it is stored."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are training partnerships?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We introduce private-sector organisations to licensed training providers and coordinate the introductory meeting. The contract is signed directly between the two parties."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Momentum Growth work with clients?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In four fixed steps on every project: understand, then plan with numeric targets and timelines, then execute with daily follow-up, then measure with periodic reports backed by documents."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which sectors does the company serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Large enterprises, small and medium businesses, education and training, and consumer products and services."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I contact Momentum Growth?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By email at info@momentumgrowth.com.sa, by phone or WhatsApp on +966 59 500 8996, or through the contact form on the site. Working hours are Sunday to Thursday, 9 am to 5 pm, and we reply within one business day."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -754,6 +961,26 @@
           </details>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">FAQ</span>
+      <h2>Frequently asked questions</h2>
+      <p class="lead">Quick answers about the company and its services.</p>
+    </div>
+    <div class="faq-list">
+        <details class="faq-item"><summary>What is Momentum Growth?</summary><p>A Saudi consulting and business development company. We help organisations open new markets and build commercial and training partnerships. It is a limited liability company registered in the Kingdom of Saudi Arabia and VAT-registered with the Zakat, Tax and Customs Authority.</p></details>
+        <details class="faq-item"><summary>What services does Momentum Growth offer?</summary><p>Five services: consulting, business development and market entry, commercial partnerships, digital transformation and AI, and training partnerships.</p></details>
+        <details class="faq-item"><summary>How can a small business use AI without a technical team?</summary><p>Start with one task that eats the team’s time and repeats every day, such as answering customer enquiries, preparing proposals or following up candidates. Pick one tool for it and measure the result after a month. Do not enter sensitive data into any tool before you understand where it is stored.</p></details>
+        <details class="faq-item"><summary>What are training partnerships?</summary><p>We introduce private-sector organisations to licensed training providers and coordinate the introductory meeting. The contract is signed directly between the two parties.</p></details>
+        <details class="faq-item"><summary>How does Momentum Growth work with clients?</summary><p>In four fixed steps on every project: understand, then plan with numeric targets and timelines, then execute with daily follow-up, then measure with periodic reports backed by documents.</p></details>
+        <details class="faq-item"><summary>Which sectors does the company serve?</summary><p>Large enterprises, small and medium businesses, education and training, and consumer products and services.</p></details>
+        <details class="faq-item"><summary>How do I contact Momentum Growth?</summary><p>By email at info@momentumgrowth.com.sa, by phone or WhatsApp on +966 59 500 8996, or through the contact form on the site. Working hours are Sunday to Thursday, 9 am to 5 pm, and we reply within one business day.</p></details>
     </div>
   </div>
 </section>
