@@ -1,8 +1,8 @@
 # Momentum Growth | مومينتوم جروث
 
-> Momentum Growth is a Saudi consulting and business development company (limited liability company registered in the Kingdom of Saudi Arabia and VAT-registered with ZATCA). We help organisations open new markets, build commercial and training partnerships, and apply AI and digital tools in marketing, sales and hiring.
+> Momentum Growth is a Saudi management, financial and technology consulting firm (limited liability company registered in the Kingdom of Saudi Arabia and VAT-registered with ZATCA). We work with large and mid-sized organisations, public and private.
 >
-> مومينتوم جروث شركة سعودية للاستشارات وتطوير الأعمال (شركة ذات مسؤولية محدودة مسجّلة في المملكة العربية السعودية ومسجّلة في ضريبة القيمة المضافة). نساعد المنشآت على فتح أسواق جديدة، وبناء شراكات تجارية وتدريبية، وتطبيق الذكاء الاصطناعي والأدوات الرقمية في التسويق والمبيعات والتوظيف.
+> مومينتوم جروث شركة سعودية للاستشارات الإدارية والمالية والتقنية (شركة ذات مسؤولية محدودة مسجّلة في المملكة العربية السعودية ومسجّلة في ضريبة القيمة المضافة). نعمل مع المنشآت الكبيرة والمتوسطة، الحكومية والخاصة.
 
 Tagline: Building Momentum · Delivering Growth — الزخم الصح يصنع النمو
 
@@ -13,15 +13,15 @@ Tagline: Building Momentum · Delivering Growth — الزخم الصح يصنع
 
 ## Services | الخدمات
 
-1. Consulting — الاستشارات: practical advice that ends in an execution plan, not a report.
+1. Financial advisory — الاستشارات المالية: financial performance analysis, planning and budgeting and funding readiness, delivered as an action plan.
 2. Business development and market entry — تطوير الأعمال وفتح الأسواق: we identify the best-fit opportunity and build an entry plan with measurable targets.
 3. Commercial partnerships — الشراكات التجارية: we open the door with the right partner and follow up until the cooperation happens.
-4. Digital transformation and AI — التحول الرقمي والذكاء الاصطناعي: choosing and applying the right AI tools in marketing, sales and hiring.
-5. Training partnerships — شراكات التدريب: we introduce private-sector organisations to licensed training providers and coordinate the intro meeting; the contract is signed directly between the two parties.
+4. Technology consulting and digital transformation — الاستشارات التقنية والتحول الرقمي: choosing and applying the right systems and AI tools in operations, sales and marketing.
+5. Support for emerging ideas — دعم الأفكار الناشئة: financial and technology advice for founders: idea assessment, business model and launch plan.
 
 ## Sectors | القطاعات
 
-Large enterprises, small and medium businesses, education and training, and consumer products and services.
+Large enterprises, mid-sized organisations, government entities and emerging companies.
 
 ## How we work | منهجيتنا
 
@@ -37,15 +37,15 @@ Understand, Plan, Execute, Measure — الفهم، الخطة، التنفيذ�
 
 ## Articles | مقالات
 
-- [كيف تستفيد المنشأة الصغيرة من الذكاء الاصطناعي دون فريق تقني؟](https://momentumgrowth.com.sa/articles/ai-for-small-business.html)
-- [ما الذي تحتاجه الجهات التدريبية لتوظيف خريجيها فعلاً؟](https://momentumgrowth.com.sa/articles/training-providers-employment.html)
-- [كيف تختار شريكاً تجارياً لا يكلّفك أكثر مما يجلب؟](https://momentumgrowth.com.sa/articles/choosing-a-commercial-partner.html)
+- [ما الذي تحتاجه المنشأة لتكون جاهزة للتمويل؟](https://momentumgrowth.com.sa/articles/financial-readiness.html)
+- [مستشار ذكاء اصطناعي على طاولة القرار: كيف تستفيد الإدارة منه؟](https://momentumgrowth.com.sa/articles/ai-decision-advisor.html)
+- [كيف نخدم المؤسسين والشركات الناشئة؟](https://momentumgrowth.com.sa/articles/startup-founders.html)
 
 ## Articles (English)
 
-- [How a small business can use AI without a tech team](https://momentumgrowth.com.sa/en/articles/ai-for-small-business.html)
-- [What training providers really need to get their graduates hired](https://momentumgrowth.com.sa/en/articles/training-providers-employment.html)
-- [How to choose a commercial partner that brings more than it costs](https://momentumgrowth.com.sa/en/articles/choosing-a-commercial-partner.html)
+- [What does an organisation need to be ready for funding?](https://momentumgrowth.com.sa/en/articles/financial-readiness.html)
+- [An AI advisor at the decision table: how can leadership benefit?](https://momentumgrowth.com.sa/en/articles/ai-decision-advisor.html)
+- [How do we serve founders and startups?](https://momentumgrowth.com.sa/en/articles/startup-founders.html)
 
 ## Optional
 
