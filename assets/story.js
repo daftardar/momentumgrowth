@@ -149,7 +149,7 @@ function layout(p){
  camera.position.set(0,0,1/(2*TF*rho));
  marker.scale.setScalar(Math.min(1,(RHO/rho)*1.4));
  camera.setViewOffset(W,H,(.5-cx)*W,(.5-cy)*H,W,H);camera.updateProjectionMatrix();
- yaw=YAW0+(yawM-YAW0)*e1-pg*.5+dyaw;pitch=Math.max(-.2,Math.min(.95,PIT0+(P0-PIT0)*e1+dpitch));apply();
+ yaw=YAW0+(yawM-YAW0)*e1+dyaw;pitch=Math.max(-.2,Math.min(.95,PIT0+(P0-PIT0)*e1+dpitch));apply();
  for(var i=0;i<steps.length;i++){
    var s0=.66+i*.11,a=ease((p-s0)/.04);
    if(i<steps.length-1)a*=1-ease((p-s0-.085)/.04);
@@ -170,7 +170,7 @@ function frame(now){
  uni.time.value=clock;
  ps+=(target-ps)*(1-Math.pow(.001,dt));
  if(ps<.62){var T=Math.PI*2;dyaw-=Math.round(dyaw/T)*T;var k=ps<.3?1:1-Math.pow(.003,dt);dyaw-=dyaw*k;dpitch-=dpitch*k;vx=vy=0;drag=false;}
- if(!drag){dyaw+=vx;dpitch=Math.max(-.6,Math.min(.5,dpitch+vy));var f=Math.pow(.94,dt*60);vx*=f;vy*=f;}
+ if(!drag){if(ps>=.62)dyaw-=.12*dt*Math.min(1,(ps-.62)/.03);dyaw+=vx;dpitch=Math.max(-.6,Math.min(.5,dpitch+vy));var f=Math.pow(.94,dt*60);vx*=f;vy*=f;}
  layout(ps);
  if(globeOn)renderer.render(scene,camera);
 }
