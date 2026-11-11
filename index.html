@@ -526,6 +526,12 @@
   html[lang=en] .hero h1{font-size:clamp(2.3rem,5vw,4.3rem);line-height:1.15}
   html[lang=en] .lead,html[lang=en] p{line-height:1.7}
   html[lang=en] .lang{font-family:var(--ar);letter-spacing:0;font-size:.86rem;padding:4px 12px}
+  /* insights: summary + direct link */
+  .post-body>p:first-child{display:block}
+  .post .more{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;color:var(--gold-dark);font-weight:600;font-size:.95rem}
+  .post .more::after{content:"\2190";color:var(--gold)}
+  html[dir=ltr] .post .more::after{content:"\2192"}
+  .post .more:hover{color:var(--navy)}
 </style>
 <link rel="canonical" href="https://momentumgrowth.com.sa/">
 <script type="application/ld+json">
@@ -867,9 +873,9 @@
     </div>
     <div class="sectors-grid">
       <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('assets/kafd-riyadh.webp')"></div><div class="in"><span class="tag">Enterprise</span><h3>الشركات الكبرى</h3><p>استشارات مالية وتقنية لقرارات بحجم مؤسسة.</p></div></div>
-      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=75')"></div><div class="in"><span class="tag">Mid-size</span><h3>المنشآت المتوسطة</h3><p>أسواق وقنوات نمو جديدة بلا فريق كامل.</p></div></div>
-      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=75')"></div><div class="in"><span class="tag">Government</span><h3>الجهات الحكومية</h3><p>دعم التحول الرقمي وتحسين الأداء المالي والتشغيلي.</p></div></div>
-      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=75')"></div><div class="in"><span class="tag">Startups</span><h3>الشركات الناشئة</h3><p>استشارات مالية وتقنية لمن يبدأ فكرته.</p></div></div>
+      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('assets/photos/sector-midsize.webp')"></div><div class="in"><span class="tag">Mid-size</span><h3>المنشآت المتوسطة</h3><p>أسواق وقنوات نمو جديدة بلا فريق كامل.</p></div></div>
+      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('assets/photos/sector-government.webp')"></div><div class="in"><span class="tag">Government</span><h3>الجهات الحكومية</h3><p>دعم التحول الرقمي وتحسين الأداء المالي والتشغيلي.</p></div></div>
+      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('assets/photos/sector-startups.webp')"></div><div class="in"><span class="tag">Startups</span><h3>الشركات الناشئة</h3><p>استشارات مالية وتقنية لمن يبدأ فكرته.</p></div></div>
     </div>
   </div>
 </section>
@@ -955,45 +961,24 @@
     </div>
     <div class="insights-grid">
       <article class="post reveal">
-        <div class="post-head"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=75')"></div><div class="txt"><span class="tag">Finance</span><h3>ما الذي تحتاجه المنشأة لتكون جاهزة للتمويل؟</h3></div></div>
+        <div class="post-head"><div class="ph" style="background-image:url('assets/photos/post-finance.webp')"></div><div class="txt"><span class="tag">Finance</span><h3>ما الذي تحتاجه المنشأة لتكون جاهزة للتمويل؟</h3></div></div>
         <div class="post-body">
           <p>التمويل لا يذهب لمن يطلبه فقط، بل لمن يثبت أنه جاهز له: أرقام واضحة، وخطة للمبلغ، وقدرة على السداد.</p>
-          <details>
-            <summary>اقرأ المقال</summary>
-            <p>كثير من المنشآت تبدأ رحلة التمويل بسؤال: كم نحتاج؟ والسؤال الأسبق: هل أرقامنا جاهزة لتُقرأ؟ الجهة الممولة تبحث عن قوائم مالية منتظمة، وتدفقات نقدية مفهومة، وفصل واضح بين مال المنشأة ومال أصحابها.</p>
-            <p>الخطوة الثانية أن يكون لكل مبلغ مطلوب غرض محدد ونتيجة متوقعة: ماذا سيُنفق، ومتى، وما الذي سيتغير بعده في الإيرادات أو التكاليف. الخطة التي تربط المبلغ بالأثر أقوى من أي عرض تقديمي.</p>
-            <p>والشرط الذي لا يُهمل: الالتزام بالأنظمة، من الزكاة والضريبة والتأمينات إلى سجلات المنشأة. ننصح بمراجعتها مع مختص قبل التقديم لأي جهة تمويل.</p>
-            <p class="meta"><a href="articles/financial-readiness.html" style="color:var(--gold-dark);font-weight:600">صفحة المقال الكاملة</a></p>
-            <p class="meta">فريق مومينتوم جروث · 2026</p>
-          </details>
+          <a class="more" href="articles/financial-readiness.html">اقرأ المقال</a>
         </div>
       </article>
       <article class="post reveal">
-        <div class="post-head"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=75')"></div><div class="txt"><span class="tag">AI · Leadership</span><h3>مستشار ذكاء اصطناعي على طاولة القرار: كيف تستفيد الإدارة منه؟</h3></div></div>
+        <div class="post-head"><div class="ph" style="background-image:url('assets/photos/post-ai.webp')"></div><div class="txt"><span class="tag">AI · Leadership</span><h3>مستشار ذكاء اصطناعي على طاولة القرار: كيف تستفيد الإدارة منه؟</h3></div></div>
         <div class="post-body">
           <p>الذكاء الاصطناعي لا يحلّ محل القرار، لكنه يضع أمام الإدارة تحليلاً أسرع وأسئلة أوضح قبل أن تقرر.</p>
-          <details>
-            <summary>اقرأ المقال</summary>
-            <p>يمكن للذكاء الاصطناعي أن يعمل كمستشار داخل الشركة يحضر الاجتماعات ويجلس على طاولة القرار: يلخّص النقاش أثناء سيره، ويربط الأرقام والتقارير السابقة بما يُطرح، ويثير الأسئلة المهملة، ويعرض البدائل مع مخاطر كل منها.</p>
-            <p>قبل الاجتماع يجهّز ملخصاً للبيانات والمستجدات، وأثناءه يوثّق القرارات والمسؤوليات والمواعيد، وبعده يتابع التنفيذ ويذكّر الفريق بما اتُّفق عليه. بهذا يتحول الاجتماع من نقاش مفتوح إلى قرارات يمكن قياسها.</p>
-            <p>والقاعدة الثابتة: القرار يبقى للإدارة، والمستشار الذكي يقدّم رأياً قابلاً للمراجعة. ولا تُدخل بيانات حساسة أو سرية في أي أداة قبل أن تفهم أين تُخزَّن، والتزم بنظام حماية البيانات الشخصية في المملكة. ونساعد المنشآت على تصميم هذا الدور وضبطه بما يناسب حوكمتها.</p>
-            <p class="meta"><a href="articles/ai-decision-advisor.html" style="color:var(--gold-dark);font-weight:600">صفحة المقال الكاملة</a></p>
-            <p class="meta">فريق مومينتوم جروث · 2026</p>
-          </details>
+          <a class="more" href="articles/ai-decision-advisor.html">اقرأ المقال</a>
         </div>
       </article>
       <article class="post reveal">
-        <div class="post-head"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=75')"></div><div class="txt"><span class="tag">Startups</span><h3>كيف نخدم المؤسسين والشركات الناشئة؟</h3></div></div>
+        <div class="post-head"><div class="ph" style="background-image:url('assets/photos/post-startups.webp')"></div><div class="txt"><span class="tag">Startups</span><h3>كيف نخدم المؤسسين والشركات الناشئة؟</h3></div></div>
         <div class="post-body">
           <p>المؤسس في بدايته يحتاج مرافقة تختصر عليه الطريق، لا مجرد نصيحة عابرة. نقدّم ذلك استشارياً، دون دعم مالي في هذه المرحلة.</p>
-          <details>
-            <summary>اقرأ المقال</summary>
-            <p>يبدأ أغلب المؤسسين بفكرة وحماس، وينقصهم ما يحوّلها إلى شركة: عميل واضح، ونموذج عمل يغطي تكاليفه، وخطة مالية وتقنية واقعية. نرافق المؤسس على نمط مسرّعات الأعمال: جلسات منتظمة، ومراجعات لتقدّمه، وأهداف قصيرة قابلة للقياس.</p>
-            <p>تشمل المرافقة تقييم الفكرة واختبارها مع السوق، وبناء النموذج المالي والموازنة الأولى، واختيار الحلول التقنية المناسبة ومنها الذكاء الاصطناعي، وتجهيز المؤسس للحديث مع الشركاء والجهات الممولة.</p>
-            <p>ونحرص على الوضوح: هذه مرافقة استشارية فقط ولا تتضمن دعماً مالياً في هذه المرحلة. ولا نعد بنتائج، فالنجاح يعتمد على المؤسس وسوقه وتنفيذه، وعملنا أن نرفع جودة قراراته في كل خطوة.</p>
-            <p class="meta"><a href="articles/startup-founders.html" style="color:var(--gold-dark);font-weight:600">صفحة المقال الكاملة</a></p>
-            <p class="meta">فريق مومينتوم جروث · 2026</p>
-          </details>
+          <a class="more" href="articles/startup-founders.html">اقرأ المقال</a>
         </div>
       </article>
     </div>

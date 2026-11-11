@@ -526,6 +526,12 @@
   html[lang=en] .hero h1{font-size:clamp(2.3rem,5vw,4.3rem);line-height:1.15}
   html[lang=en] .lead,html[lang=en] p{line-height:1.7}
   html[lang=en] .lang{font-family:var(--ar);letter-spacing:0;font-size:.86rem;padding:4px 12px}
+  /* insights: summary + direct link */
+  .post-body>p:first-child{display:block}
+  .post .more{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;color:var(--gold-dark);font-weight:600;font-size:.95rem}
+  .post .more::after{content:"\2190";color:var(--gold)}
+  html[dir=ltr] .post .more::after{content:"\2192"}
+  .post .more:hover{color:var(--navy)}
 </style>
 <link rel="canonical" href="https://momentumgrowth.com.sa/en/">
 <script type="application/ld+json">
@@ -867,9 +873,9 @@
     </div>
     <div class="sectors-grid">
       <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('../assets/kafd-riyadh.webp')"></div><div class="in"><span class="tag">Enterprise</span><h3>Large enterprises</h3><p>Financial and technology advice for enterprise-scale decisions.</p></div></div>
-      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=75')"></div><div class="in"><span class="tag">Mid-size</span><h3>Mid-sized organisations</h3><p>New markets and growth channels without a full team.</p></div></div>
-      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=75')"></div><div class="in"><span class="tag">Government</span><h3>Government entities</h3><p>Support for digital transformation and for financial and operational performance.</p></div></div>
-      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=75')"></div><div class="in"><span class="tag">Startups</span><h3>Emerging companies</h3><p>Financial and technology advice for those starting out with an idea.</p></div></div>
+      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('../assets/photos/sector-midsize.webp')"></div><div class="in"><span class="tag">Mid-size</span><h3>Mid-sized organisations</h3><p>New markets and growth channels without a full team.</p></div></div>
+      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('../assets/photos/sector-government.webp')"></div><div class="in"><span class="tag">Government</span><h3>Government entities</h3><p>Support for digital transformation and for financial and operational performance.</p></div></div>
+      <div class="sector reveal tilt" data-tilt="7"><div class="ph" style="background-image:url('../assets/photos/sector-startups.webp')"></div><div class="in"><span class="tag">Startups</span><h3>Emerging companies</h3><p>Financial and technology advice for those starting out with an idea.</p></div></div>
     </div>
   </div>
 </section>
@@ -954,45 +960,24 @@
     </div>
     <div class="insights-grid">
       <article class="post reveal">
-        <div class="post-head"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=75')"></div><div class="txt"><span class="tag">Finance</span><h3>What does an organisation need to be ready for funding?</h3></div></div>
+        <div class="post-head"><div class="ph" style="background-image:url('../assets/photos/post-finance.webp')"></div><div class="txt"><span class="tag">Finance</span><h3>What does an organisation need to be ready for funding?</h3></div></div>
         <div class="post-body">
           <p>Funding does not go to whoever merely asks. It goes to whoever can show they are ready: clear numbers, a plan for the money and the ability to repay.</p>
-          <details>
-            <summary>Read the article</summary>
-            <p>Many organisations begin the funding journey by asking how much they need. The earlier question is whether their numbers are ready to be read. A funder looks for regular financial statements, understandable cash flows and a clear separation between the organisation’s money and its owners’.</p>
-            <p>Second, every amount requested should have a defined purpose and an expected result: what will be spent, when, and what will change afterwards in revenue or costs. A plan that links the amount to its impact is stronger than any presentation.</p>
-            <p>The condition that is never skipped is compliance, from zakat, tax and social insurance to corporate records. We recommend reviewing these with a qualified professional before applying to any funder.</p>
-            <p class="meta"><a href="articles/financial-readiness.html" style="color:var(--gold-dark);font-weight:600">Full article page</a></p>
-            <p class="meta">Momentum Growth team · 2026</p>
-          </details>
+          <a class="more" href="articles/financial-readiness.html">Read the article</a>
         </div>
       </article>
       <article class="post reveal">
-        <div class="post-head"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=75')"></div><div class="txt"><span class="tag">AI · Leadership</span><h3>An AI advisor at the decision table: how can leadership benefit?</h3></div></div>
+        <div class="post-head"><div class="ph" style="background-image:url('../assets/photos/post-ai.webp')"></div><div class="txt"><span class="tag">AI · Leadership</span><h3>An AI advisor at the decision table: how can leadership benefit?</h3></div></div>
         <div class="post-body">
           <p>AI does not replace the decision, but it puts faster analysis and sharper questions in front of leadership before it decides.</p>
-          <details>
-            <summary>Read the article</summary>
-            <p>AI can work as an advisor inside the company that attends meetings and sits at the decision table: it summarises the discussion as it unfolds, links the numbers and earlier reports to what is on the table, raises the questions that were missed, and sets out the alternatives with the risks of each.</p>
-            <p>Before the meeting it prepares a summary of the data and the latest developments, during it records the decisions, owners and deadlines, and afterwards it follows up on execution and reminds the team what was agreed. The meeting turns from open discussion into decisions that can be measured.</p>
-            <p>The fixed rule is that the decision stays with leadership, and the AI advisor offers an opinion that can be reviewed. Do not enter sensitive or confidential data into any tool before you understand where it is stored, and comply with the Kingdom’s personal data protection law. We help organisations design and govern this role to fit their own governance.</p>
-            <p class="meta"><a href="articles/ai-decision-advisor.html" style="color:var(--gold-dark);font-weight:600">Full article page</a></p>
-            <p class="meta">Momentum Growth team · 2026</p>
-          </details>
+          <a class="more" href="articles/ai-decision-advisor.html">Read the article</a>
         </div>
       </article>
       <article class="post reveal">
-        <div class="post-head"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=75')"></div><div class="txt"><span class="tag">Startups</span><h3>How do we serve founders and startups?</h3></div></div>
+        <div class="post-head"><div class="ph" style="background-image:url('../assets/photos/post-startups.webp')"></div><div class="txt"><span class="tag">Startups</span><h3>How do we serve founders and startups?</h3></div></div>
         <div class="post-body">
           <p>A founder at the start needs accompaniment that shortens the road, not passing advice. We offer it as advisory support, without financial backing at this stage.</p>
-          <details>
-            <summary>Read the article</summary>
-            <p>Most founders start with an idea and enthusiasm, and lack what turns it into a company: a clear customer, a business model that covers its costs, and a realistic financial and technology plan. We accompany the founder in the manner of a business accelerator: regular sessions, progress reviews and short, measurable goals.</p>
-            <p>The accompaniment covers assessing the idea and testing it with the market, building the financial model and first budget, choosing suitable technology including AI, and preparing the founder to speak with partners and funders.</p>
-            <p>We are careful to be clear: this is advisory accompaniment only and does not include financial support at this stage. We promise no outcomes, since success depends on the founder, the market and the execution; our job is to raise the quality of the founder’s decisions at every step.</p>
-            <p class="meta"><a href="articles/startup-founders.html" style="color:var(--gold-dark);font-weight:600">Full article page</a></p>
-            <p class="meta">Momentum Growth team · 2026</p>
-          </details>
+          <a class="more" href="articles/startup-founders.html">Read the article</a>
         </div>
       </article>
     </div>
