@@ -32,3 +32,6 @@
  .mg-prog{inset-inline:6vw;width:auto;bottom:8vh}
 }
 .mg-gl.mg-can{cursor:grab}.mg-gl.mg-can:active{cursor:grabbing}
+@media (min-width:901px){
+ html[dir=ltr] .mg-live .mg-steps,html[dir=ltr] .mg-prog{inset-inline-start:auto;inset-inline-end:7vw}
+}
