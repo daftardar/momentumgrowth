@@ -159,7 +159,6 @@ function layout(p){
  bar.style.width=(Math.max(0,Math.min(1,(p-.38)/.6))*100).toFixed(1)+'%';
  var can=p>=.62;
  host.classList.toggle('mg-can',can);
- setStyle(hint,'ho','opacity',can?'1':'0');
 }
 
 var last=0,clock=0;
