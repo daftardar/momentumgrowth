@@ -103,15 +103,16 @@ resize();readScroll();ps=target;
 /* drag (enabled only once the camera has pulled back to the globe) */
 var dyaw=0,dpitch=0,vx=0,vy=0,drag=false,px=0,py=0,lastMove=0;
 function sens(){return Math.min(.005,3.6/Math.max(W,H));}
-host.addEventListener('pointerdown',function(e){if(ps<.62)return;drag=true;px=e.clientX;py=e.clientY;vx=vy=0;lastMove=performance.now();try{host.setPointerCapture(e.pointerId);}catch(_){}});
+host.addEventListener('pointerdown',function(e){if(ps<.56)return;drag=true;px=e.clientX;py=e.clientY;vx=vy=0;lastMove=performance.now();try{host.setPointerCapture(e.pointerId);}catch(_){}});
 host.addEventListener('pointermove',function(e){if(!drag)return;var k=sens(),dx=e.clientX-px,dy=e.clientY-py;px=e.clientX;py=e.clientY;vx=dx*k;vy=dy*k*.45;lastMove=performance.now();dyaw+=vx;dpitch=Math.max(-.6,Math.min(.5,dpitch+vy));});
 function end(){drag=false;if(performance.now()-lastMove>80){vx=vy=0;}}
 host.addEventListener('pointerup',end);host.addEventListener('pointercancel',end);
 
 /* video scrubbing */
-var R0=.625,SXV=-.0102,SY=.483,YAW0=Math.atan2(-Math.cos(43.5*Math.PI/180),-Math.sin(43.5*Math.PI/180)),PIT0=.43;
+var NEWV=!mobile; /* desktop uses the v5 Earth Studio clip; mobile keeps the older clip until its framing is re-exported */
+var LON0=NEWV?42:43.5,R0=NEWV?.49:.625,SXV=NEWV?-.01:-.0102,SY=NEWV?.485:.483,YAW0=Math.atan2(-Math.cos(LON0*Math.PI/180),-Math.sin(LON0*Math.PI/180)),PIT0=.43;
 var cv=renderer.domElement;
-var vidReady=false,want=0,seeking=false,seekTimer=0,FPS=20;
+var vidReady=false,want=0,seeking=false,seekTimer=0,FPS=NEWV?30:20;
 function seek(){
   if(!vidReady||seeking)return;
   var t=Math.round(want*FPS)/FPS;
@@ -125,24 +126,33 @@ vid.addEventListener('loadedmetadata',function(){
   try{var pr=vid.play();if(pr&&pr.then)pr.then(function(){vid.pause();}).catch(function(){});else vid.pause();}catch(_){}
 });
 vid.addEventListener('error',function(){vidReady=false;});
-vid.preload='auto';vid.src=D.video;vid.load();
+vid.preload='auto';
+var VSRC=(!NEWV&&D.videoM)?D.videoM:D.video;
+if(NEWV&&D.poster)vid.poster=D.poster;
+/* load the whole clip into memory first, so every scrub seek is served locally (no range requests) */
+function useDirect(){vid.src=VSRC;vid.load();}
+try{
+  fetch(VSRC).then(function(r){if(!r.ok)throw 0;return r.blob();}).then(function(b){
+    if(dead)return;vid.src=URL.createObjectURL(b);vid.load();
+  }).catch(useDirect);
+}catch(_){useDirect();}
 
 var cache={};
 function setStyle(el,key,prop,val){if(cache[key]!==val){cache[key]=val;el.style[prop]=val;}}
 var globeOn=false;
 function layout(p){
- var aV=ease(p/.03)*(1-ease((p-.31)/.15));
+ var aV=ease(p/.03)*(1-ease((p-.31)/.09));
  var dk=ease((p-.20)/.20);
  setStyle(vid,'vf','filter','brightness('+(1-.55*dk).toFixed(2)+') saturate('+(1-.45*dk).toFixed(2)+')');
  setStyle(sV,'vo','opacity',aV.toFixed(3));
  if(vidReady&&aV>.001&&isFinite(vid.duration)){
    var Dd=vid.duration-.04;
-   want=p<.10?(p/.10)*1.6:Math.min(Dd,1.6+(p-.10)/.21*(Dd-1.6));
+   want=NEWV?Math.min(Dd,Math.max(0,p/.31)*Dd):(p<.10?(p/.10)*1.6:Math.min(Dd,1.6+(p-.10)/.21*(Dd-1.6)));
    seek();
  }
  setStyle(cap,'co','opacity',(p>.04&&p<.30)?'1':'0');
  var go=ease((p-.28)/.02);cv.style.opacity=go;globeOn=go>.01;
- var e1=ease((p-.44)/.26),e2=ease((p-.93)/.07),pg=Math.max(0,p-.44);
+ var e1=ease((p-.38)/.17),e2=ease((p-.95)/.05),pg=Math.max(0,p-.44);
  var kv=Math.max(1,W/H*9/16),R0v=R0*kv,SX=.5+SXV*16/9*H/W*kv,SYv=.5+(SY-.5)*kv; /* match the video's object-fit:cover framing */
  var rho=Math.exp(Math.log(R0v)+(Math.log(RHO)-Math.log(R0v))*e1)*(1-.08*e2);
  var cx=SX+(CX-SX)*e1,cy=SYv+(CY-SYv)*e1-e2*.06;
@@ -151,13 +161,13 @@ function layout(p){
  camera.setViewOffset(W,H,(.5-cx)*W,(.5-cy)*H,W,H);camera.updateProjectionMatrix();
  yaw=YAW0+(yawM-YAW0)*e1+dyaw;pitch=Math.max(-.2,Math.min(.95,PIT0+(P0-PIT0)*e1+dpitch));apply();
  for(var i=0;i<steps.length;i++){
-   var s0=.66+i*.11,a=ease((p-s0)/.04);
-   if(i<steps.length-1)a*=1-ease((p-s0-.085)/.04);
+   var s0=.52+i*.15,a=ease((p-s0)/.04);
+   if(i<steps.length-1)a*=1-ease((p-s0-.115)/.035);
    steps[i].style.opacity=a.toFixed(3);steps[i].style.translate='0 '+((1-a)*26).toFixed(1)+'px';
  }
  setStyle(prog,'po','opacity',p>.38?'1':'0');
  bar.style.width=(Math.max(0,Math.min(1,(p-.38)/.6))*100).toFixed(1)+'%';
- var can=p>=.62;
+ var can=p>=.56;
  host.classList.toggle('mg-can',can);
 }
 
@@ -169,8 +179,8 @@ function frame(now){
  var dt=Math.min((now-last)/1000||.016,.05);last=now;clock+=dt;
  uni.time.value=clock;
  ps+=(target-ps)*(1-Math.pow(.001,dt));
- if(ps<.62){var T=Math.PI*2;dyaw-=Math.round(dyaw/T)*T;var k=ps<.3?1:1-Math.pow(.003,dt);dyaw-=dyaw*k;dpitch-=dpitch*k;vx=vy=0;drag=false;}
- if(!drag){if(ps>=.62)dyaw-=.12*dt*Math.min(1,(ps-.62)/.03);dyaw+=vx;dpitch=Math.max(-.6,Math.min(.5,dpitch+vy));var f=Math.pow(.94,dt*60);vx*=f;vy*=f;}
+ if(ps<.56){var T=Math.PI*2;dyaw-=Math.round(dyaw/T)*T;var k=ps<.3?1:1-Math.pow(.003,dt);dyaw-=dyaw*k;dpitch-=dpitch*k;vx=vy=0;drag=false;}
+ if(!drag){if(ps>=.56)dyaw-=.12*dt*Math.min(1,(ps-.56)/.03);dyaw+=vx;dpitch=Math.max(-.6,Math.min(.5,dpitch+vy));var f=Math.pow(.94,dt*60);vx*=f;vy*=f;}
  layout(ps);
  if(globeOn)renderer.render(scene,camera);
 }

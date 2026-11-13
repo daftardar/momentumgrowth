@@ -1,15 +1,16 @@
 /* Momentum Growth — globe scroll story. All selectors are scoped under .mg-story / .mg-bridge. */
-.mg-bridge{height:55vh;background:linear-gradient(to bottom,var(--ivory) 0%,#9a9a98 22%,#2a2a2c 62%,#080809 100%)}
+.mg-bridge{height:80vh;background:linear-gradient(to bottom,#fff 0%,#e9ecf2 10%,#b9c0d0 24%,#77829c 40%,#3c4763 56%,#1a2136 72%,#0d0f17 88%,#080809 100%)}
+.mg-bridge-out{height:60vh;margin-top:-1px;background:linear-gradient(to bottom,#080809 0%,#0d0f17 12%,#1a2136 28%,#3c4763 44%,#77829c 60%,#b9c0d0 76%,#e9ecf2 90%,#fff 100%)}
 .mg-story{position:relative;background:#080809;color:#fff;margin-top:-1px}
 .mg-stage{position:relative;overflow:hidden;background:radial-gradient(ellipse at 30% 55%,#1b1c1e 0%,#0e0e10 60%,#080809 100%);padding:12vh 0 14vh}
 .mg-scene,.mg-gl,.mg-cap,.mg-prog,.mg-hint{display:none}
 .mg-steps{position:relative;width:min(1140px,100% - 32px);margin-inline:auto;display:grid;gap:34px}
-.mg-step small{display:block;color:var(--gold-light);font-size:13px;margin-bottom:6px}
+.mg-step small{display:block;color:var(--gold-light);font-size:14px;margin-bottom:6px}
 .mg-step h2{font-weight:600;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.35;margin:0 0 12px;color:#fff;text-wrap:balance}
 .mg-step p{color:rgba(255,255,255,.72);font-size:clamp(15px,1.5vw,18px);line-height:1.9;max-width:46ch}
 
 /* Live (scroll-driven) mode — only enabled by JS when WebGL works and motion is allowed */
-.mg-story.mg-live{height:720vh}
+.mg-story.mg-live{height:500vh}
 .mg-live .mg-stage{position:sticky;top:0;height:100vh;height:100svh;padding:0}
 .mg-live .mg-scene,.mg-live .mg-gl,.mg-live .mg-cap,.mg-live .mg-prog,.mg-live .mg-hint{display:block}
 .mg-scene{position:absolute;inset:0;pointer-events:none;opacity:0;will-change:opacity}
